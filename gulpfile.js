@@ -42,6 +42,7 @@ const js_Build = function (done) {
       plumber(
         //エラーが出ても処理を止めない
         {
+          //エラー出力設定
           errorHandler: notify.onError("Error: <%= error.message %>"),
         }
       )
@@ -70,8 +71,8 @@ const sass_Build = function (done) {
       plumber(
         //エラーが出ても処理を止めない
         {
-          errorHandler: notify.onError("Error:<%= error.message %>"),
           //エラー出力設定
+          errorHandler: notify.onError("Error:<%= error.message %>"),
         }
       )
     )
