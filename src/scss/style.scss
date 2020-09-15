@@ -1,6 +1,15 @@
-@import "layout/main";
+// 共通設定（読み込み順序を指定したい場合は1つずつファイルを記述する）
+@import "foundation/reset";
+@import "foundation/var";
+@import "foundation/color";
+@import "foundation/mixin";
+@import "foundation/base";
 
-h1 {
-  color: red;
-  font-size: 16px;
-}
+// レイアウト
+@import "layout/*";
+
+// コンポーネント
+@import "object/component/*";
+
+// プロジェクト
+@import "object/component/project/*";

@@ -1,0 +1,8 @@
+.c-img{
+    &__profile{
+        width: 150px;
+        height: 150px;
+        @include custumRadius(50%);
+    }
+
+}
