@@ -4,32 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>MyPortflio</title>
   </head>
   <body>
-    <header class="l-header">
-      <div class="l-header__inner">
-        <div class="c-sidebar">
-          <div class="c-sidebar__profile__wrapp">
-            <img class="c-img__profile" src="https://placehold.jp/150x150.png" alt="profile">
-            <h1>Hisafumi <br> Nishihara</h1>
-            <p>I am Portflio!</p>
-          </div>
-        </div>
-        <ul>
-          <li><p>aaaaaaaaa</p></li>
-          <li><p>aaaaaaaaaa</p></li>
-          <li><p>aaaaaaaaaaaaaaa</p></li>
-          <li><p>aaaaaaaaaaaaaaa</p></li>
-        </ul>
-      </div>
-    </header>
-    <div class="main">
-      <div class="sub">
-        <div class="box"><button>ボタン1</button></div>
-        <div class="box"><button>ボタン2</button></div>
+    <div class="p-header__nav__wrapp">
+      <div class="p-header__nav__burger js-menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
+    <div class="p-header__nav__background js-nav-background"></div>
+    <nav class="p-header__nav js-nav">
+      <ul class="p-header__nav__list">
+        <li class=""><a href="#">HOME</a></li>
+        <li class=""><a href="#about">About</a></li>
+        <li class=""><a href="#skill">Skill</a></li>
+        <li class=""><a href="#work">Work</a></li>
+        <li class=""><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="l-main">
+      <section class="p-eyecatch">
+        <div class="p-eyecatch__title__wrapp" id="particles-js">
+          <h1 class="p-eyecatch__title animate__fadeOutDown">Welcome My MyPortflio</h1>
+        </div>
+      </section>
+      <section class="p-contents p-contents__about" id="about">
+        <div class="l-container">
+          <h2 class="p-contents__title">About Me</h2>
+          <div class="p-about__img">
+            <div class="p-about__img__innre">
+              <img src="https://placehold.jp/150x150.png" alt="プロフィール画像" />
+            </div>
+          </div>
+          <div class="p-contents__about__profile">
+            <p>Hisafumi Nishihara</p>
+            <p>愛媛県出身、兵庫県在住</p>
+            <p></p>
+          </div>
+          <button>Profile Detail</button>
+        </div>
+      </section>
+      <section class="p-contents p-contents__skill" id="skill">
+        <div class="l-container">
+          <h2 class="p-contents__title">Skill</h2>
+          <div class="p-skill__wrapp">
+            <div class="p-skill__card"></div>
+            <div class="p-skill__card"></div>
+            <div class="p-skill__card"></div>
+          </div>
+        </div>
+      </section>
+      <section class="p-contents p-contents__work" id="work">
+        <div class="l-container">
+          <h2 class="p-contents__title">Work</h2>
+        </div>
+      </section>
+      <section class="p-contents p-contents__contact" id="work">
+        <div class="l-container">
+          <h2 class="p-contents__title">Contact Me</h2>
+          <button>Twitter</button>
+          <button>Contact Form</button>
+        </div>
+      </section>
+    </div>
     <script src="js/bundle.min.js"></script>
+    <footer class="l-footer">©Hisafumi Nishihara All Right Reserved</footer>
   </body>
 </html>

@@ -1,0 +1,122 @@
+.p-header__nav {
+  z-index: 120;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  transition: all .8s cubic-bezier(.68,-.55,.265,1.55);
+  &--active{
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+  &__list{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    & > li {
+      text-align: center;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      & > a {
+        font-size: 2rem;
+        color: #fff;
+      }
+    }
+  }
+  &__background {
+    border-radius: 50%;
+    top: 2.8rem;
+    right: 2.8rem;
+    height: 3rem;
+    width: 3rem;
+    background-color: #191e25;
+    color: #fff;
+    position: fixed;
+    z-index: 1;
+    background-size: cover;
+    background-position: 50%;
+    transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    &--active {
+      transform: scale(100);
+    }
+  }
+  &__wrapp {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    height: 5rem;
+    width: 5rem;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 300;
+    @include custumShadow(0px, 4px, 10px, 4px);
+  }
+  &__burger {
+    display: block;
+    transition: all 0.4s;
+    box-sizing: border-box;
+    position: absolute;
+    width: 40px;
+    height: 32px;
+    z-index: 101;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    &:hover {
+      cursor: pointer;
+      & span {
+        &:nth-of-type(1) {
+          top: 0;
+        }
+        &:nth-of-type(3) {
+          bottom: 0;
+        }
+      }
+    }
+    @include mq(md) {
+      display: inline;
+    }
+    & span {
+      display: inline-block;
+      background-color: #191e25;
+      transition: all 0.4s;
+      box-sizing: border-box;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      border-radius: 4px;
+      height: 4px;
+
+      &:nth-of-type(1) {
+        top: 3px;
+      }
+      &:nth-of-type(2) {
+        top: 14px;
+      }
+      &:nth-of-type(3) {
+        bottom: 3px;
+      }
+    }
+    &.burger--active span {
+      &:nth-of-type(1) {
+        top: 14px;
+        // transform: translateY(12px) rotate(-45deg);
+        transform: rotate(-135deg);
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        bottom: 14px;
+        transform: rotate(135deg);
+        // transform: translateY(-15px) rotate(45deg);
+      }
+    }
+  }
+ 
+}

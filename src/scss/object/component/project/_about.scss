@@ -1,0 +1,12 @@
+.p-about {
+  &__img {
+    max-height: 250px;
+    max-width: 800px;
+    &__inner {
+      & > img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}

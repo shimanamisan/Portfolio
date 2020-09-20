@@ -3,13 +3,14 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: #2980b9;
+  background-color: #f4f4f4;
   color: $font-color_default;
   font-size: $font-size_default;
   font-family: $font-family-base;
   line-height: 1.6;
   text-size-adjust: 100%; // スマホを横向きにしたときのフォントの拡大を防ぐ（親要素のフォントサイズに対する割合にしている）
   letter-spacing: 0.1em;
+  background-image: url('../img/blog_background_img.png');
 }
 
 // IEではmain要素が display:inline になっているので
