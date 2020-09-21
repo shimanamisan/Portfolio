@@ -10,7 +10,7 @@ body {
   line-height: 1.6;
   text-size-adjust: 100%; // スマホを横向きにしたときのフォントの拡大を防ぐ（親要素のフォントサイズに対する割合にしている）
   letter-spacing: 0.1em;
-  background-image: url('../img/blog_background_img.png');
+  background-image: url('../img/background_img.png');
 }
 
 // IEではmain要素が display:inline になっているので
@@ -35,7 +35,8 @@ a:hover {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   vertical-align: bottom; // imgタグに入る余白を消す
 }
 
