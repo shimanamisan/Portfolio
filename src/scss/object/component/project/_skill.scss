@@ -1,3 +1,51 @@
-.p-skill{
-    
+.p-skill {
+  &__wrapp {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  &__card {
+    width: calc(100% / 3.5);
+    height: auto;
+    background-color: #fff;
+    margin-bottom: 56px;
+    @include custumRadius(5px);
+    @include custumShadow(0, 3px, 15px, 0, rgba(88, 88, 88, 0.3));
+    &__inner {
+      padding: 48px;
+      & > p:first-of-type(){
+        margin-bottom: 8px;
+      }
+    }
+    &__detail {
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      & > img {
+        width: 30%;
+      }
+      & > p {
+          display: inline-block;
+          text-align: center;
+          flex-grow: 1;
+      }
+    }
+  }
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  &__text{
+      display: inline-block;
+      text-align: left;
+      font-size: 14px;
+      width: 100%;
+      line-height: 1.8;
+      &__inner{
+        & > p:first-of-type{
+          margin-bottom: 8px;
+        }
+      }
+  }
 }

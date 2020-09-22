@@ -49,26 +49,161 @@
               独学、オンラインプログラミングスクールにて、HTML、CSS、JavaScript、PHP言語を学び、その他開発ツールやフレームワークを用いてWebサービスの開発を行いました。現在も継続的に学習しています。
             </p>
           </div>
-          <button class="c-btn">
+          <button class="c-btn js-modal-open">
             <span class="c-btn__text">Profile Detail</span>
           </button>
         </div>
-      </section>
-      <section class="p-contents p-contents__skill" id="skill">
-        <div class="l-container">
-          <h2 class="p-contents__title">Skill</h2>
-          <div class="p-skill__wrapp">
-            <div class="p-skill__card"></div>
-            <div class="p-skill__card"></div>
-            <div class="p-skill__card"></div>
+        <!-- profile detail modal -->
+        <div class="c-modal js-profile-modal">
+          <div class="c-modal__container">
+            <div class="c-modal__body">
+              <div class="c-modal__body__inner"></div>
+            </div>
           </div>
         </div>
+        <!-- end profile detail modal -->
       </section>
+      <!-- Work -->
       <section class="p-contents p-contents__work" id="work">
         <div class="l-container">
           <h2 class="p-contents__title">Work</h2>
         </div>
       </section>
+      <!-- end Work -->
+
+      <!-- Skill -->
+      <section class="p-contents p-contents__skill" id="skill">
+        <div class="l-container l-container__skill">
+          <h2 class="p-contents__title">Skill</h2>
+          <div class="p-skill__wrapp">
+            <div class="p-skill__card">
+              <div class="p-skill__card__inner">
+                <p class="p-skill__title">コーディング</p>
+                <!-- html -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/html_logo.svg" alt="htmlロゴ" />
+                  <p>HTML5</p>
+                </div>
+                <!-- end html -->
+                <!-- css -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/css_logo.svg" alt="cssロゴ" />
+                  <p>CSS</p>
+                </div>
+                <!-- end sass -->
+                <!-- sass -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/sass_logo.svg" alt="sassロゴ" />
+                  <p>SASS</p>
+                </div>
+                <!-- end sass -->
+                <div class="p-skill__text__inner">
+                  <p class="p-skill__text">Adobe XD等のデザインデータからコーディングを行うことが出来ます。</p>
+                  <p class="p-skill__text">また、レスポンシブデザインやも実装することが出来ます。CSS設計は主にFLOCSSを使用しています。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-skill__card">
+              <div class="p-skill__card__inner">
+                <p class="p-skill__title">フロントエンド</p>
+                <!-- javascript -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/javascript_logo.svg" alt="javascriptロゴ" />
+                  <p>JavaScript</p>
+                </div>
+                <!-- end javascript -->
+                <!-- jquery -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/jquery_logo.svg" alt="jqueryロゴ" />
+                  <p>jquery</p>
+                </div>
+                <!-- end jquery -->
+                <!-- vue -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/vue_logo.svg" alt="vue.jsロゴ" />
+                  <p>Vue.js</p>
+                </div>
+                <!-- end jquery -->
+                <!-- react -->
+                <!-- <div class="p-skill__card__detail">
+                  <img src="./img/react_logo.svg" alt="react.jsロゴ" />
+                  <p>React.js</p>
+                </div> -->
+                <!-- end react -->
+                <div class="p-skill__text__inner">
+                  <p class="p-skill__text">
+                    JavaScriptでは基本的な言語仕様を学び、JavaScriptやjQueryでTODOリストを作成することで、DOM操作及びCRUD処理の基本を習得しました。
+                  </p>
+                  <p class="p-skill__text">また、ステップアップを目指してJavaScriptフレームワークを学習しています。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-skill__card">
+              <div class="p-skill__card__inner">
+                <p class="p-skill__title">バックエンド</p>
+                <!-- php -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/php_logo.svg" alt="phpロゴ" />
+                  <p>php</p>
+                </div>
+                <!-- end php -->
+                <!-- mysql -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/mysql_logo.svg" alt="mysqlロゴ" />
+                  <p>MySQL</p>
+                </div>
+                <!-- end mysql -->
+                <!-- laravel -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/laravel_logo.svg" alt="laravelロゴ" />
+                  <p>laravel</p>
+                </div>
+                <!-- end laravel -->
+                <!-- fuelphp -->
+                <!-- <div class="p-skill__card__detail">
+                  <img src="./img/fuelphp_logo.svg" alt="fuelphpロゴ" />
+                  <p>fuelphp</p>
+                </div> -->
+                <!-- end fuelphp -->
+                <div class="p-skill__text__inner">
+                  <p class="p-skill__text">
+                    フレームワークを使用せず、フルスクラッチでWebサービスの開発の練習を行うことで、基礎的な知識を養ってきました。
+                  </p>
+                  <p class="p-skill__text">その後、より実践を意識してフレームワークを使用したWebサービスの開発を行いました。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-skill__card">
+              <div class="p-skill__card__inner">
+                <p class="p-skill__title">インフラ</p>
+                <!-- apache -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/apache_logo.svg" alt="apacheロゴ" />
+                  <p>apache</p>
+                </div>
+                <!-- end apache -->
+                <!-- apache -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/aws_logo.svg" alt="awsロゴ" />
+                  <p>AWS</p>
+                </div>
+                <!-- end apache -->
+                <p class="p-skill__text">comment</p>
+              </div>
+            </div>
+            <div class="p-skill__card">
+              <div class="p-skill__card__inner">
+                <p class="p-skill__title">開発ツール</p>
+                <p>skill_list_img</p>
+                <p>skill_list_title</p>
+                <p class="p-skill__text">comment</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end Skill -->
+      <!-- Contact -->
       <section class="p-contents p-contents__contact" id="work">
         <div class="l-container">
           <h2 class="p-contents__title">Contact Me</h2>
@@ -76,6 +211,7 @@
           <button>Contact Form</button>
         </div>
       </section>
+      <!-- end Contact -->
     </div>
     <script src="js/bundle.min.js"></script>
     <footer class="l-footer">©Hisafumi Nishihara All Right Reserved</footer>
