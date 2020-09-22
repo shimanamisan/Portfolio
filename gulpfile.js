@@ -91,7 +91,7 @@ const sass_Build = function (done) {
 // gulp-imageminのバージョンアップによるでるエラー：imagemin.jpegtran is not a function
 // imagemin.jpegtran()をimagemin.mozjpeg()に変更
 const img_Build = function (done) {
-  var srcGlob = paths.srcDir + "/img/*.+(jpg|jpeg|png|gif)"; // /**/ で、その配下の全部のディレクトリを見に行く
+  var srcGlob = paths.srcDir + "/img/*.+(jpg|jpeg|png|gif|svg)"; // /**/ で、その配下の全部のディレクトリを見に行く
   var dstGlob = paths.dstDir + "/img";
   gulp
     .src(srcGlob)
@@ -102,6 +102,7 @@ const img_Build = function (done) {
         imagemin.gifsicle({ interlaced: true }),
         // imagemin.jpegtran({progressive: true}), v6.x系の書き方
         // imagemin.mozjpeg({progressive: true}),
+        imagemin.svgo(),
         imagemin.mozjpeg({ quality: 80 }),
         imagemin.optipng({ optimizationLevel: 5 }),
       ])

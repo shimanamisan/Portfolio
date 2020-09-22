@@ -1,0 +1,17 @@
+.c-modal {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 20;
+  position: fixed;
+  transition: .6s all ease;
+  opacity: 0;
+  visibility: hidden;
+  &--active{
+      opacity: 1;
+      transition: .6s all ease;
+      visibility: visible;
+  }
+}
