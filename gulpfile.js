@@ -47,6 +47,37 @@ const js_Build = function (done) {
         }
       )
     )
+    .pipe(sourcemaps.write("./"))
+    .pipe(
+      rename({
+        extname: ".min.js", // 圧縮後は min が追記されたファイル名になる
+      })
+    )
+    .pipe(gulp.dest(paths.dstDir + "/js/"));
+  done();
+};
+
+// 本番環境用にビルド
+const js_Build_p = function (done) {
+  browserify({
+    entries: [paths.srcDir + "/js/main.js"],
+    debug: true,
+  })
+    .transform(babelify, { presets: ["@babel/preset-env"] })
+    .bundle()
+    .on("error", function (e) {
+      console.log(e);
+    })
+    .pipe(source("bundle.js")) // 引数に出力後のファイル名を記述
+    .pipe(
+      plumber(
+        //エラーが出ても処理を止めない
+        {
+          //エラー出力設定
+          errorHandler: notify.onError("Error: <%= error.message %>"),
+        }
+      )
+    )
     .pipe(streamify(uglify())) // streamifyを使用していないと、GulpUglifyError: Streaming not supported とエラーが出る
     .pipe(sourcemaps.write("./"))
     .pipe(
@@ -142,4 +173,4 @@ const php_serve = function () {
 // gulp コマンドで下記のタスクが実行される
 exports.default = php_serve;
 // gulp buildコマンドで実行される（初回ビルド時）
-exports.build = gulp.parallel(js_Build, sass_Build, img_Build);
+exports.build = gulp.parallel(js_Build_p, sass_Build, img_Build);
