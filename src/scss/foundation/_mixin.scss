@@ -12,6 +12,18 @@ $breackpoints: (
   }
 }
 
+// ブレークポイント（hover制御）
+$hoverBreackpoints: (
+  "pc": "screen and (min-width: 1024px)",
+  // PC表示の場合のみhoverを適用するようにする
+) !default;
+
+@mixin pchvoer($pcBreackpoint: pc) {
+  @media #{map-get($hoverBreackpoints, $pcBreackpoint)} {
+    @content;
+  }
+}
+
 @mixin custumRadius($value: 3px) {
   border-radius: $value;
 }
