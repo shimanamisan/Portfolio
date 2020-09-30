@@ -1,0 +1,29 @@
+.p-contact {
+  width: 100%;
+  &__form {
+    margin-bottom: 32px;
+    &__wrapp {
+      position: relative;
+    }
+    &__title {
+      text-align: left;
+      display: block;
+      margin-bottom: 8px;
+    }
+    &__text {
+      font-weight: bold;
+    }
+    &__icon {
+      color: #fff;
+      display: inline-block;
+      padding: 1px 6px;
+      font-size: 0.75rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      &--require {
+        background-color: #d24747;
+      }
+    }
+  }
+}

@@ -40,14 +40,12 @@
       @include custumRadius(5px 5px 0px 0px);
       overflow: hidden;
       position: relative;
-      & > img {
-        &:hover {
-          @include pchvoer() {
-            cursor: pointer;
-            transform: scale(1.1);
-            transition: all 0.3s ease;
-            filter: contrast(75%) blur(2px) brightness(0.5);
-          }
+      &:hover img {
+        @include pchvoer() {
+          cursor: pointer;
+          transform: scale(1.1);
+          transition: all 0.3s ease;
+          filter: contrast(75%) blur(2px) brightness(0.5);
         }
       }
       &::before {
@@ -67,6 +65,7 @@
       }
       @include pchvoer() {
         &:hover::before {
+          cursor: pointer;
           opacity: 1;
           transform: translate(-50%, -50%);
         }

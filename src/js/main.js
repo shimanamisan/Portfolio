@@ -1,5 +1,5 @@
 // ライブラリを読み込み
-const $ = require("jquery");
+import $ from "jquery";
 import "particles.js/particles";
 const particlesJS = window.particlesJS;
 

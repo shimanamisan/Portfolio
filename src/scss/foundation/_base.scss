@@ -6,16 +6,23 @@ body {
   background-color: #f4f4f4;
   color: $font-color_default;
   font-size: $font-size_default;
-  font-family: Nunito, M PLUS\1p, Helvetica Neue, ヒラギノ角ゴ ProN W3, Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
   line-height: 1.6;
   text-size-adjust: 100%; // スマホを横向きにしたときのフォントの拡大を防ぐ（親要素のフォントサイズに対する割合にしている）
   letter-spacing: 0.1em;
-  background-image: url('../img/background_img.png');
+  background-image: url("../img/background_img.png");
+}
+
+html,
+body,
+button,
+textarea,
+input {
+  font-family: Nunito, M plus\1p, Helvetica Neue, ヒラギノ角ゴ ProN W3, Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
 }
 
 // IEではmain要素が display:inline になっているので
 main {
-    display: block;
+  display: block;
 }
 
 p,

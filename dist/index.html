@@ -283,29 +283,28 @@
             <div class="p-skill__card">
               <div class="p-skill__card__inner">
                 <p class="p-skill__title">開発ツール</p>
-                  <!-- webpack -->
-                  <div class="p-skill__card__detail">
-                    <img src="./img/webpack_logo.svg" alt="webpackロゴ" />
-                    <p>Webpack</p>
-                  </div>
-                  <!-- end webpack -->
-                  <!-- Gulp -->
-                  <div class="p-skill__card__detail">
-                    <img src="./img/gulp_logo.svg" alt="Gulpロゴ" />
-                    <p>Gulp</p>
-                  </div>
-                  <!-- end Gulp -->
-                  <!-- Git -->
-                  <div class="p-skill__card__detail">
-                    <img src="./img/git_logo.svg" alt="Gitロゴ" />
-                    <p>Git</p>
-                  </div>
-                  <!-- end Git -->
+                <!-- webpack -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/webpack_logo.svg" alt="webpackロゴ" />
+                  <p>Webpack</p>
+                </div>
+                <!-- end webpack -->
+                <!-- Gulp -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/gulp_logo.svg" alt="Gulpロゴ" />
+                  <p>Gulp</p>
+                </div>
+                <!-- end Gulp -->
+                <!-- Git -->
+                <div class="p-skill__card__detail">
+                  <img src="./img/git_logo.svg" alt="Gitロゴ" />
+                  <p>Git</p>
+                </div>
+                <!-- end Git -->
+                <p class="p-skill__text">効率よく開発が行えるように、各種ツールを使って開発を行っています。</p>
                 <p class="p-skill__text">
-                  効率よく開発が行えるように、各種ツールを使って開発を行っています。
-                </p>
-                <p class="p-skill__text">
-                  アウトプット時のGitを使ったソースコード管理ではチーム開発を意識して、Issueを立て、Branchを切ってPull Requestまで行うようにしてきました。
+                  アウトプット時のGitを使ったソースコード管理ではチーム開発を意識して、Issueを立て、Branchを切ってPull
+                  Requestまで行うようにしてきました。
                 </p>
               </div>
             </div>
@@ -314,32 +313,48 @@
       </section>
       <!-- end Skill -->
       <!-- Contact -->
-      <section class="p-contents p-contents__contact" id="work">
+      <section class="p-contents p-contents__contact" id="contact">
         <div class="l-container l-container__contact">
-          <h2 class="p-contents__title">Contact Me</h2>
-          <div class="p-contact__wrapp">
+          <h2 class="p-contents__title">Contact</h2>
+          <div class="p-contact p-contact__group__wrapp">
             <form action="">
-              <div class="p-contact__form">
-                <span>お名前</span>
-                <span>必須</span>
-                <input type="text">
+              <div class="p-contact__form__wrapp">
+                <label class="p-contact__form__title" for="">
+                  <span class="p-contact__form__text">お名前</span>
+                  <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
+                </label>
+                <div class="p-contact__form">
+                  <input class="c-form" type="text" />
+                </div>
               </div>
-              <div class="p-contact__form">
-                <span>メールアドレス</span>
-                <span>必須</span>
-                <input type="text">
+              <div class="p-contact__form__wrapp">
+                <label class="p-contact__form__title" for="">
+                  <span class="p-contact__form__text">メールアドレス</span>
+                  <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
+                </label>
+                <div class="p-contact__form">
+                  <input class="c-form" type="text" />
+                </div>
               </div>
-              <div class="p-contact__form">
-                <span>タイトル</span>
-                <span>必須</span>
-                <input type="text">
+              <div class="p-contact__form__wrapp">
+                <label class="p-contact__form__title" for="">
+                  <span class="p-contact__form__text">タイトル</span>
+                  <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
+                </label>
+                <div class="p-contact__form">
+                  <input class="c-form" type="text" />
+                </div>
               </div>
-              <div class="p-contact__form">
-                <span>お問い合わせ内容</span>
-                <span>必須</span>
-                <textarea type="text"></textarea>
+              <div class="p-contact__form__wrapp">
+                <label class="p-contact__form__title" for="">
+                  <span class="p-contact__form__text">お問い合わせ内容</span>
+                  <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
+                </label>
+                <div class="p-contact__form">
+                  <textarea class="c-form c-form__textarea" type="text"></textarea>
+                </div>
               </div>
-              <button>送信内容を確認する</button>
+              <button class="c-btn">送信内容を確認する</button>
             </form>
           </div>
         </div>

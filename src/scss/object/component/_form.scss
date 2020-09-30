@@ -1,0 +1,21 @@
+.c-form {
+  width: 100%;
+  padding: 8px 12px 9px;
+  @include custumRadius(3px);
+  box-sizing: border-box;
+  border: 2px solid #dfd8d8;
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  transition: border 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  &__textarea {
+    height: 188px;
+  }
+  &:focus {
+    border: 2px solid #1e73be;
+    transition: border 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  }
+  &__error {
+    background-color: #ffeded;
+  }
+}
