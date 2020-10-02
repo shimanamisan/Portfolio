@@ -1,37 +1,83 @@
 <?php
+/****************************************
+ 共通関数読み込み
+*****************************************/
+require('Library/function.php');
 
+// head.php 読み込み
+require('head.php');
+
+// header.php 読み込み
+require('header.php');
+
+
+getIP();
+
+// ページ宣言
+$mode = 'contact';
+
+if (isset($_SESSION['mode']) && $_SESSION['mode'] !== $mode) {
+    $_SESSION = []; // セッションをする前に空にする
+    session_destroy(); // この時点ではセッションは削除されない
+    debug('メンバー募集ページから遷移してきました。セッションの値を削除します。contact.php' . print_r($_SESSION, true));
+    debug('   ');
+}
+
+
+// POST送信されていた場合
+if (!empty($_POST)) {
+    debug('POST送信されている処理です。');
+    debug('   ');
+    // POST時の値をフォームに表示させるので、確認画面から戻ってきた場合に
+    // SESSIONの値を表示させているものをクリアする
+    clearSession('name');
+    clearSession('email');
+    clearSession('contact');
+
+    // 変数にフォームの値を格納
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $contact = $_POST['contact'];
+
+    // 入力必須
+    validRequire($name, 'name');
+    validRequire($email, 'email');
+    validRequire($contact, 'contact');
+
+    // バリデーションエラーが無い場合
+    if (empty($err_msg)) {
+        debug('未入力バリデーションが通った時の処理です。');
+        debug('   ');
+
+        // Email形式チェック
+        validEmail($email, 'email');
+        // 名前が全角かチェック
+        validNameText($name, 'name');
+
+        // 各フォーム文字数チェック
+        validMaxLen($name, 'name', 50);
+        validMaxLen($email, 'email');
+        validContactMaxLen($contact, 'contact');
+
+        if (empty($err_msg)) {
+            debug('バリデーションOKの時の処理です。');
+            debug('   ');
+    
+            $_SESSION['name'] = $name;
+            $_SESSION['email'] = $email;
+            $_SESSION['contact'] = $contact;
+            $_SESSION['transition'] = true;
+            $_SESSION['mode'] = $mode;
+
+            header("Location:confirm.php");
+            exit();
+        }
+    }
+}
 
 
 ?>
 
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,700|Nunito:400,700&display=swap" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <title>MyPortfolio</title>
-  </head>
-  <body>
-    <div class="p-header__nav__wrapp">
-      <div class="p-header__nav__burger js-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-    <div class="p-header__nav__background js-nav-background"></div>
-    <nav class="p-header__nav js-nav">
-      <ul class="p-header__nav__list">
-        <li class=""><a href="#">HOME</a></li>
-        <li class=""><a href="#about">About</a></li>
-        <li class=""><a href="#skill">Skill</a></li>
-        <li class=""><a href="#work">Work</a></li>
-        <li class=""><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
     <div class="l-main">
       <section class="p-eyecatch">
         <div class="p-eyecatch__title__wrapp" id="particles-js">
@@ -323,15 +369,25 @@
         <div class="l-container l-container__contact">
           <h2 class="p-contents__title">Contact</h2>
           <div class="p-contact p-contact__group__wrapp">
-            <form action="">
+            <form action="" method="post">
               <div class="p-contact__form__wrapp">
                 <label class="p-contact__form__title" for="">
                   <span class="p-contact__form__text">お名前</span>
                   <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
                 </label>
                 <div class="p-contact__form">
-                  <input class="c-form js-form-name" type="text" />
-                  <span>入力必須です。</span>
+                  <input class="c-form js-form-name <?php
+                    if (!empty($err_msg['name'])) {
+                        echo 'c-error';
+                    }
+                    ?>" type="text" name="name"  value="<?php echo getFormData('name');?>"/>
+                  <div class="c-error__msg">
+                  <?php
+                    if (!empty($err_msg['name'])) {
+                        echo sanitize('お名前は') . $err_msg['name'];
+                    }
+                    ?>
+                  </div>
                 </div>
               </div>
               <div class="p-contact__form__wrapp">
@@ -340,7 +396,18 @@
                   <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
                 </label>
                 <div class="p-contact__form">
-                  <input class="c-form" type="text" />
+                  <input class="c-form <?php
+                    if (!empty($err_msg['email'])) {
+                        echo 'c-error';
+                    }
+                    ?>" type="text" name="email" value="<?php echo getFormData('email');?>"/>
+                    <div class="c-error__msg">
+                    <?php
+                      if (!empty($err_msg['email'])) {
+                          echo sanitize('メールアドレスは') . $err_msg['email'];
+                      }
+                      ?>
+                    </div>
                 </div>
               </div>
               <div class="p-contact__form__wrapp">
@@ -349,7 +416,18 @@
                   <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
                 </label>
                 <div class="p-contact__form">
-                  <input class="c-form" type="text" />
+                  <input class="c-form <?php
+                    if (!empty($err_msg['subject'])) {
+                        echo 'c-error';
+                    }
+                    ?>" type="text" name="subject" value="<?php echo getFormData('subject');?>"/>
+                    <div class="c-error__msg">
+                    <?php
+                      if (!empty($err_msg['subject'])) {
+                          echo sanitize('タイトルは') . $err_msg['subject'];
+                      }
+                      ?>
+                    </div>
                 </div>
               </div>
               <div class="p-contact__form__wrapp">
@@ -358,7 +436,18 @@
                   <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
                 </label>
                 <div class="p-contact__form">
-                  <textarea class="c-form c-form__textarea" type="text"></textarea>
+                  <textarea class="c-form c-form__textarea <?php
+                    if (!empty($err_msg['contact'])) {
+                        echo 'c-error';
+                    }
+                    ?>" type="text" name="contact"><?php echo getFormData('contact');?></textarea>
+                  <div class="c-error__msg">
+                    <?php
+                      if (!empty($err_msg['contact'])) {
+                          echo sanitize('お問い合わせ内容は') . $err_msg['contact'];
+                      }
+                      ?>
+                    </div>
                 </div>
               </div>
               <button class="c-btn">
@@ -370,7 +459,10 @@
       </section>
       <!-- end Contact -->
     </div>
-    <script src="js/bundle.min.js"></script>
-    <footer class="l-footer">©Hisafumi Nishihara All Right Reserved</footer>
-  </body>
-</html>
+
+<?php
+
+// footer.php 読み込み
+require('footer.php');
+
+?>
