@@ -1,3 +1,9 @@
+<?php
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -324,7 +330,8 @@
                   <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
                 </label>
                 <div class="p-contact__form">
-                  <input class="c-form" type="text" />
+                  <input class="c-form js-form-name" type="text" />
+                  <span>入力必須です。</span>
                 </div>
               </div>
               <div class="p-contact__form__wrapp">
@@ -354,7 +361,9 @@
                   <textarea class="c-form c-form__textarea" type="text"></textarea>
                 </div>
               </div>
-              <button class="c-btn">送信内容を確認する</button>
+              <button class="c-btn">
+                <span class="c-btn__text">送信内容を確認する</span>
+              </button>
             </form>
           </div>
         </div>

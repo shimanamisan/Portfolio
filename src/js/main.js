@@ -59,4 +59,19 @@ $(function () {
     $profileModal.toggleClass("c-modal--active");
     $body.css({ 'overflow': '' })
   });
+
+  let $jsFormName = $('.js-form-name')
+  let val = ""
+  $jsFormName.on({
+    'blur': function(){
+      console.log(val)
+      
+      if(val === ""){
+        $(this).text('入力必須です。')
+      }
+    },
+    'focus':function(){
+      
+    }
+  })
 });
