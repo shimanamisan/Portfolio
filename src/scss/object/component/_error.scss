@@ -1,0 +1,18 @@
+.c-error {
+  border: solid 2px #ff6366 !important;
+  background: #ffe1df;
+  &:focus {
+    border: solid 2px #ff6366;
+  }
+  &__text {
+    color: #ff6366;
+    &--contact {
+      margin-top: -8px;
+    }
+  }
+  &__msg {
+    text-align: right;
+    color: red;
+    font-size: 12px;
+  }
+}
