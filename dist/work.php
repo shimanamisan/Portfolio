@@ -6,7 +6,7 @@
         <ul class="p-work__wrapp">
         <li class="p-work__card">
             <div class="p-work__card__inner">
-            <div class="p-work__img__wrapp js-crypt-modal__open">
+            <div class="p-work__img__wrapp js-modal__open" data-modal-link="js-crypt">
                 <img class="p-work__img" src="./img/CryptoTrend.png" alt="卒業試験課題" />
             </div>
             <div class="p-work__card__detail">
@@ -25,7 +25,7 @@
         </li>
         <li class="p-work__card">
             <div class="p-work__card__inner">
-            <div class="p-work__img__wrapp js-taskApp-modal__open">
+            <div class="p-work__img__wrapp js-modal__open" data-modal-link="js-taskApp">
                 <img class="p-work__img" src="./img/TaskApp.png" alt="タスク管理アプリ" />
             </div>
             <div class="p-work__card__detail">
@@ -44,7 +44,7 @@
         </li>
         <li class="p-work__card">
             <div class="p-work__card__inner">
-            <div class="p-work__img__wrapp js-lineup-modal__open">
+            <div class="p-work__img__wrapp js-modal__open" data-modal-link="js-lineup">
                 <img class="p-work__img" src="./img/LINEUP.png" alt="" />
             </div>
             <div class="p-work__card__detail">

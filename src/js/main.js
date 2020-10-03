@@ -66,29 +66,21 @@ $(function () {
   /****************************************
 作品紹介詳細用のモーダルの表示
 *****************************************/
-  let $container = $(".js-modal__container"),
-    $modalBg = $(".js-modal__bg"),
-    $crypt = $(".js-crypt-modal__open"),
-    $taskApp = $(".js-taskApp-modal__open"),
-    $lineup = $(".js-lineup-modal__open");
+  let $modalBg = $(".js-modal__bg"),
+    $workModalOpen = $(".js-modal__open");
 
-  const domArray = [$crypt, $taskApp, $lineup];
-
-
-  domArray.forEach((element) => {
-    element.on("click", function () {
-      $modalBg.toggleClass("c-modal--active");
-      $container.toggleClass("c-modal--active");
-      $body.css({ overflow: "hidden" });
-     
-    });
+  $workModalOpen.on("click", function () {
+    let target = $(this).data("modal-link");
+    console.log("クリックした要素 " + target);
+    let showModal = document.querySelector("." + target);
+    console.log(showModal);
+    $(showModal).toggleClass("c-modal--active");
+    $body.css({ overflow: "hidden" });
   });
 
   $modalBg.on("click", function () {
-    $modalBg.toggleClass("c-modal--active");
-    $container.toggleClass("c-modal--active");
+    $(this).parents(".c-modal").toggleClass("c-modal--active");
     $body.css({ overflow: "" });
-  
   });
 
   /****************************************
