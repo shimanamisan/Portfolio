@@ -34,6 +34,9 @@ $(function () {
     let href = $(this).attr("href"),
       target = $(href == "#" || href == "" ? "html" : href),
       position = target.offset().top;
+    console.log("href変数の中 " + href);
+    console.log("target変数の中 " + JSON.stringify(target));
+    console.log("position変数の中 " + position);
     $("body,html").animate(
       {
         scrollTop: position,
@@ -44,34 +47,81 @@ $(function () {
   });
 
   /****************************************
-モーダルの表示
+プロフィール詳細用モーダルの表示
 *****************************************/
   let $modalOpen = $(".js-modal-open"); // プロフィール用のモーダル表示ボタン
   let $profileModal = $(".js-profile-modal"); // プロフィール用のモーダル
-  let $body = $('body');
+  let $body = $("body");
   // プロフィール用のモーダル表示処理
   $modalOpen.on("click", function () {
     $profileModal.toggleClass("c-modal--active");
-    $body.css({ 'overflow': 'hidden' })
+    $body.css({ overflow: "hidden" });
   });
   // モーダル表示時に背景をクリックしてもモーダルを非表示にする
   $profileModal.on("click", function () {
     $profileModal.toggleClass("c-modal--active");
-    $body.css({ 'overflow': '' })
+    $body.css({ overflow: "" });
   });
 
-  let $jsFormName = $('.js-form-name')
-  let val = ""
+  /****************************************
+作品紹介詳細用のモーダルの表示
+*****************************************/
+  let $container = $(".js-modal__container"),
+    $modalBg = $(".js-modal__bg"),
+    $crypt = $(".js-crypt-modal__open"),
+    $taskApp = $(".js-taskApp-modal__open"),
+    $lineup = $(".js-lineup-modal__open");
+
+  const domArray = [$crypt, $taskApp, $lineup];
+
+
+  domArray.forEach((element) => {
+    element.on("click", function () {
+      $modalBg.toggleClass("c-modal--active");
+      $container.toggleClass("c-modal--active");
+      $body.css({ overflow: "hidden" });
+     
+    });
+  });
+
+  $modalBg.on("click", function () {
+    $modalBg.toggleClass("c-modal--active");
+    $container.toggleClass("c-modal--active");
+    $body.css({ overflow: "" });
+  
+  });
+
+  /****************************************
+お問い合わせフォームのバリデーション
+*****************************************/
+  let $jsFormName = $(".js-form-name");
+  let val = "";
   $jsFormName.on({
-    'blur': function(){
-      console.log(val)
-      
-      if(val === ""){
-        $(this).text('入力必須です。')
+    blur: function () {
+      console.log(val);
+
+      if (val === "") {
+        $(this).text("入力必須です。");
       }
     },
-    'focus':function(){
-      
-    }
-  })
+    focus: function () {},
+  });
+
+  /****************************************
+バリデーションの際に指定の要素までスクロール
+*****************************************/
+  let contact = $("#contact");
+  if ($(".c-error").length) {
+    console.log("バリデーションエラーが発生しています。");
+    console.log("contact要素のトップからの位置 " + contact.offset().top);
+    let contact_position = contact.offset().top;
+    $("body,html").animate(
+      {
+        scrollTop: contact_position,
+      },
+      0
+    );
+    console.log("contact_positionの値 " + contact_position);
+    contact_position = 0; // 移動後に値を初期化
+  }
 });
