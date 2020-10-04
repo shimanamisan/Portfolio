@@ -5,24 +5,26 @@
   display: inline-block;
   background-color: transparent;
   padding: 16px 24px;
-  transition: 0.4s ease;
+  transition: all 0.4s ease;
   letter-spacing: 3px;
   outline: none;
   min-width: 200px;
   box-sizing: border-box;
   outline: 2px solid #0a0b37;
   & > span {
-      font-weight: bold;
-    transition: 0.4s ease;
+    font-weight: bold;
+    transition: all 0.4s ease;
     color: #0a0b37;
     display: inline-block;
     position: relative;
   }
   &:hover {
     cursor: pointer;
-    transition: 0.4s ease;
+    transition: all 0.4s ease;
     & > span {
       color: #fff;
+      transition: all 0.4s ease;
+      z-index: 1;
     }
     &::before {
       left: -10%;
