@@ -1,23 +1,23 @@
-// pulg-in
 const gulp = require("gulp");
 // gulp-minify-cssが非推奨になり、gulp-clean-cssを使用するようアナウンスが出ている
 // https://www.npmjs.com/package/gulp-minify-css
-const sass = require("gulp-sass");
+const sass = require("gulp-sass"); // sassを使えるようにする
 const sassGlob = require("gulp-sass-glob"); // 複数のimport文をまとめる
 const changed = require("gulp-changed");
-const imagemin = require("gulp-imagemin");
-const browserSync = require("browser-sync");
+const imagemin = require("gulp-imagemin"); // 画像を圧縮する
+const browserSync = require("browser-sync"); // ファイル変更時にブラウザを自動リロードする
 const plumber = require("gulp-plumber"); // エラーが発生しても強制終了させない
 const notify = require("gulp-notify"); // エラー発生時のアラート出力
 const postcss = require("gulp-postcss"); // PostCSS利用
 const autoprefixer = require("autoprefixer"); // 自動でベンダープレフィックスを記述する
 const sourcemaps = require("gulp-sourcemaps"); // ソースマップ作成
 const uglify = require("gulp-uglify"); // jsファイルを圧縮する
+const stripDebug = require("gulp-strip-debug"); // console.logやalertを削除する
 const rename = require("gulp-rename"); // ファイル名を変更するプラグインを追加
-const browserify = require("browserify");
+const browserify = require("browserify"); // jsファイルなどビルドする
 const babelify = require("babelify"); // babelify は Browserify 用の Babel 変換ライブラリ
 const source = require("vinyl-source-stream"); // gulpで使用するvinylオブジェクトに変換するためのもの。Browserify を扱う際に利用する
-const gulp_connect = require("gulp-connect-php");
+const gulp_connect = require("gulp-connect-php"); // phpを扱えるようにする
 const streamify = require("gulp-streamify"); // gulpでストリームモードを利用できるようにする
 
 // ファイルパスを予め設定
@@ -26,7 +26,7 @@ var paths = {
   dstDir: "dist",
 };
 
-// browserifyを使ってJSファイルをビルド
+// browserifyを使ってJSファイルをビルド（開発環境）
 const js_Build = function (done) {
   browserify({
     entries: [paths.srcDir + "/js/main.js"],
@@ -42,7 +42,6 @@ const js_Build = function (done) {
       plumber(
         //エラーが出ても処理を止めない
         {
-          //エラー出力設定
           errorHandler: notify.onError("Error: <%= error.message %>"),
         }
       )
@@ -57,7 +56,7 @@ const js_Build = function (done) {
   done();
 };
 
-// 本番環境用にビルド
+// 本番環境に上げる時の処理
 const js_Build_p = function (done) {
   browserify({
     entries: [paths.srcDir + "/js/main.js"],
@@ -73,11 +72,11 @@ const js_Build_p = function (done) {
       plumber(
         //エラーが出ても処理を止めない
         {
-          //エラー出力設定
           errorHandler: notify.onError("Error: <%= error.message %>"),
         }
       )
     )
+    .pipe(streamify(stripDebug())) // ビルド時にconsole.log()の記述を削除する
     .pipe(streamify(uglify())) // streamifyを使用していないと、GulpUglifyError: Streaming not supported とエラーが出る
     .pipe(sourcemaps.write("./"))
     .pipe(
@@ -102,8 +101,8 @@ const sass_Build = function (done) {
       plumber(
         //エラーが出ても処理を止めない
         {
-          //エラー出力設定
           errorHandler: notify.onError("Error:<%= error.message %>"),
+          //エラー出力設定
         }
       )
     )
@@ -122,7 +121,7 @@ const sass_Build = function (done) {
 // gulp-imageminのバージョンアップによるでるエラー：imagemin.jpegtran is not a function
 // imagemin.jpegtran()をimagemin.mozjpeg()に変更
 const img_Build = function (done) {
-  var srcGlob = paths.srcDir + "/img/*.+(jpg|jpeg|png|gif|svg)"; // /**/ で、その配下の全部のディレクトリを見に行く
+  var srcGlob = paths.srcDir + "/img/*.+(jpg|jpeg|png|gif)"; // /**/ で、その配下の全部のディレクトリを見に行く
   var dstGlob = paths.dstDir + "/img";
   gulp
     .src(srcGlob)
@@ -133,7 +132,6 @@ const img_Build = function (done) {
         imagemin.gifsicle({ interlaced: true }),
         // imagemin.jpegtran({progressive: true}), v6.x系の書き方
         // imagemin.mozjpeg({progressive: true}),
-        imagemin.svgo(),
         imagemin.mozjpeg({ quality: 80 }),
         imagemin.optipng({ optimizationLevel: 5 }),
       ])
@@ -164,7 +162,7 @@ const php_serve = function () {
 
   // ファイルが更新（ビルド）されたらリロードする
   gulp.watch(paths.dstDir + "/js/*.js").on("change", browserSync.reload);
-  gulp.watch(paths.dstDir + "/css/*.css").on("change", browserSync.reload);
+  // gulp.watch(paths.dstDir + "/css/*.css").on("change", browserSync.reload);
 
   gulp.watch("./dist/*.html").on("change", browserSync.reload);
   gulp.watch("./dist/*.php").on("change", browserSync.reload);

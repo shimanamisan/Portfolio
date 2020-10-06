@@ -29,6 +29,7 @@
     "gulp-sass-glob": "^1.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-streamify": "^1.0.2",
+    "gulp-strip-debug": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-watch": "^5.0.1",
     "vinyl-source-stream": "^2.0.0"
