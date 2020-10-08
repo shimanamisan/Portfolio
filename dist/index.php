@@ -101,9 +101,9 @@ if (!empty($_POST)) {
               独学、オンラインプログラミングスクールにて、HTML、CSS、JavaScript、PHP言語を学び、その他開発ツールやフレームワークを用いてWebサービスの開発を行いました。現在も継続的に学習しています。
             </p>
           </div>
-          <button class="c-btn js-modal-open">
+          <!-- <button class="c-btn js-modal-open">
             <span class="c-btn__text">Profile Detail</span>
-          </button>
+          </button> -->
         </div>
 
         <?php

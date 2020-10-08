@@ -67,7 +67,8 @@ $(function () {
 作品紹介詳細用のモーダルの表示
 *****************************************/
   let $modalBg = $(".js-modal__bg"),
-    $workModalOpen = $(".js-modal__open");
+      $workModalOpen = $(".js-modal__open"),
+      $closeIcon = $(".js-close-icon");
 
   $workModalOpen.on("click", function () {
     let target = $(this).data("modal-link");
@@ -79,6 +80,12 @@ $(function () {
   });
 
   $modalBg.on("click", function () {
+    // モーダル背景要素の親要素を取得して、モーダルの表示用クラスを切り替えている
+    $(this).parents(".c-modal").toggleClass("c-modal--active");
+    $body.css({ overflow: "" });
+  });
+  $closeIcon.on("click", function () {
+    // モーダル背景要素の親要素を取得して、モーダルの表示用クラスを切り替えている
     $(this).parents(".c-modal").toggleClass("c-modal--active");
     $body.css({ overflow: "" });
   });
@@ -102,11 +109,12 @@ $(function () {
   /****************************************
 バリデーションの際に指定の要素までスクロール
 *****************************************/
+  let contact_position = 0;
   let contact = $("#contact");
   if ($(".c-error").length) {
     console.log("バリデーションエラーが発生しています。");
     console.log("contact要素のトップからの位置 " + contact.offset().top);
-    let contact_position = contact.offset().top;
+    contact_position = contact.get(0).offsetTop;
     $("body,html").animate(
       {
         scrollTop: contact_position,
@@ -114,6 +122,5 @@ $(function () {
       0
     );
     console.log("contact_positionの値 " + contact_position);
-    contact_position = 0; // 移動後に値を初期化
   }
 });
