@@ -162,7 +162,7 @@ const php_serve = function () {
 
   // ファイルが更新（ビルド）されたらリロードする
   gulp.watch(paths.dstDir + "/js/*.js").on("change", browserSync.reload);
-  // gulp.watch(paths.dstDir + "/css/*.css").on("change", browserSync.reload);
+  gulp.watch(paths.dstDir + "/css/*.css").on("change", browserSync.reload);
 
   gulp.watch("./dist/*.html").on("change", browserSync.reload);
   gulp.watch("./dist/*.php").on("change", browserSync.reload);
