@@ -88,7 +88,7 @@ if (!empty($_POST)) {
           <h2 class="p-contents__title">About Me</h2>
           <div class="p-about__img">
             <div class="p-about__img__inner">
-              <img src="https://placehold.jp/800x400.png" alt="プロフィール画像" />
+              <img src="./img/img_01.png" alt="プロフィール画像" />
             </div>
           </div>
           <div class="p-about__profile">

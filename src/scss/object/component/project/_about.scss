@@ -1,8 +1,7 @@
 .p-about {
   &__img {
-    max-height: 400px;
-    max-width: 800px;
-    margin: 0 auto;
+    height: 100%;
+    width: 100%;
     @include custumShadow(0, 3px, 15px, 0, rgba(88, 88, 88, 0.3));
     &__inner {
       height: 100%;
@@ -16,9 +15,9 @@
     background-color: #fff;
     width: 500px;
     height: auto;
-    margin-top: -220px;
     position: relative;
-    margin-left: 24px;
+    top: -260px;
+    right: -58%;
     @include custumShadow(0, 3px, 15px, 0, rgba(88, 88, 88, 0.3));
     box-sizing: border-box;
   }

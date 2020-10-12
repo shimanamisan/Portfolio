@@ -171,20 +171,19 @@
             <li class="p-work__card">
                 <div class="p-work__card__inner">
                 <div class="p-work__img__wrapp">
-                    <img class="p-work__img" src="./img/Baseball_Item.png" alt="" />
+                    <img class="p-work__img" src="./img/first_website.png" alt="架空のカフェサイト" />
                 </div>
                 <div class="p-work__card__detail">
-                    <h3 class="p-work__detail__title">Baseball Item</h3>
+                    <h3 class="p-work__detail__title">架空のカフェサイト</h3>
                     <div class="p-work__card__meta">
                         <p>
-                        野球用品専門のフリーマーケットサイトです。<br>
-                        フルスクラッチでフレームワークを使用せず生PHPでWebサービスを開発しました。
+                        架空のカフェサイトです。HTML、CSS、jQueryを1ヶ月ほど学習して、アウトプットとして作成しました。<br>
                         </p>
                     </div>
                     <div class="p-work__card__meta">
                         <ul class="p-work__card__meta__list">
-                            <li>PHP</li>
-                            <li>MySQL</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
                             <li>jQuery</li>
                         </ul>
                     </div>
