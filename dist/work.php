@@ -170,7 +170,7 @@
             </li>
             <li class="p-work__card">
                 <div class="p-work__card__inner">
-                <div class="p-work__img__wrapp">
+                <div class="p-work__img__wrapp js-modal__open" data-modal-link="js-first_website">
                     <img class="p-work__img" src="./img/first_website.png" alt="架空のカフェサイト" />
                 </div>
                 <div class="p-work__card__detail">
