@@ -47,6 +47,37 @@ $(function () {
   });
 
   /****************************************
+ スクロールアニメーション
+*****************************************/
+  $(window).on("scroll", function () {
+    console.log("scroll!!");
+    $(".u-js-fadeIn").each(function () {
+      let position = $(this).offset().top, // 指定した要素のY座標を取得
+        scroll = $(window).scrollTop(), // スクロール位置を取得
+        windowHeight = $(window).height(); // ウィンドウの高さを取得
+
+      // 要素が画面中央に来た時に発火
+      if (scroll > position - windowHeight + 200) {
+        console.log('scroll :' + scroll )
+        console.log('position :' + position)
+        console.log('windowHeight :' + windowHeight)
+        $(this).addClass("u-js-fadeIn--active");
+      }
+    });
+  });
+  //  $(window).scroll(function(){
+  //   $('.js-fadeIn').each(function(){
+  //     var elemPos = $(this).offset().top,
+  //         scroll = $(window).scrollTop(),
+  //         windowHeight = $(window).height();
+  //     if(scroll > elemPos -windowHeight + 200){
+  //       $(this).addClass('fadeIn');
+  //     }
+  //   });
+
+  // });
+
+  /****************************************
 プロフィール詳細用モーダルの表示
 *****************************************/
   let $modalOpen = $(".js-modal-open"); // プロフィール用のモーダル表示ボタン
@@ -67,8 +98,8 @@ $(function () {
 作品紹介詳細用のモーダルの表示
 *****************************************/
   let $modalBg = $(".js-modal__bg"),
-      $workModalOpen = $(".js-modal__open"),
-      $closeIcon = $(".js-close-icon");
+    $workModalOpen = $(".js-modal__open"),
+    $closeIcon = $(".js-close-icon");
 
   $workModalOpen.on("click", function () {
     let target = $(this).data("modal-link");
