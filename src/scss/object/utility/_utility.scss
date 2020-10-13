@@ -1,14 +1,24 @@
 // ボタンのスタイリングの微調整
-.u-btn{
-
+.u-btn {
 }
 
 // 外側の余白の微調整
-.u-margin{
-
+.u-margin {
 }
 
 // 内側の余白の微調整
-.u-padding{
+.u-padding {
+}
 
+// フェードインアニメーション
+.u-js- {
+  &fadeIn {
+    opacity: 0;
+    transform: translatey(50px);
+    transition: 1s;
+    &--active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
