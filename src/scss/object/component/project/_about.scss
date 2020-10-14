@@ -20,6 +20,11 @@
     right: -58%;
     @include custumShadow(0, 3px, 15px, 0, rgba(88, 88, 88, 0.3));
     box-sizing: border-box;
+    @include mq(){
+      top: 0;
+      right: 0;
+      width: 100%;
+    }
   }
   &__name {
     font-size: 2rem;
