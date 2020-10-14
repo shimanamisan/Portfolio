@@ -31,7 +31,7 @@
                         <span>URL：</span><p><a href="https://lineupbaseballclub.com" target="_brank" rel=”noreferrer”>https://lineupbaseballclub.com</a></p>
                     </div>
                     <div class="c-modal__site__info">
-                        <span>GitHub：</span><p><a href="https://github.com/shimanamisan/lineup.git" target="_brank" rel=”noreferrer”>https://github.com/shimanamisan/lineup.git</a></p>
+                        <span>GitHub：</span><p><a href="https://github.com/shimanamisan/lineup.git" target="_brank" rel=”noreferrer”>ソースコード</a></p>
                     </div>
                 </div>
             </div>

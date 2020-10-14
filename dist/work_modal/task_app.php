@@ -15,23 +15,24 @@
                     <div class="c-modal__site__detail">
                         <span>内容</span>
                         <p>
-                            大阪府大阪市で活動している、自身が所属している野球チーム 「LINEUP」 のホームページを制作。
-                            提案からデザイン、ロゴデザイン、文章作成、コーディング、実装まで1人で担当。
+                            Webブラウザ上で付箋の様にタスクを管理・整理出来るWebアプリケーション。
+                            シンプルなUIで操作出来るようにデザインしました。
                         </p>
                         <p>
-                            他のチームと差別化出来るようにとにかく目立つサイトにして欲しい、という要望を意識しつつ訪問者の目を引けるように背景に動画を使用しました。
-                            また、ターゲット層が男性なので格好良さを演出できるよう、ダークなでデザインに仕上げました。
+                            フロントエンドはVue.js、バックエンドはLaravelを使用し、その他 Vue-Router・Vuexなどのライブラリを使用しSPA構成で作成しました。
+                            バックエンドの認証保持にはSESSIONを使用し、フロント側の認証状態はVuexに保持させ、画面遷移にはVue-Routerを使用しています。
                         </p>
                         <span>機能</span>
                         <p>
-                            動画スライダー / CSSアニメーション / 初回アクセス時ローディングアイコン表示 / お問い合わせ機能
+                            ユーザー登録・ログイン・ログアウト・退会機能 / Twitter認証機能 / タスクCRUD機能（フォルダ、カード、タスクアイテム） / タスクソート機能（ドラッグ&ドロップ） /
+                            マイページ機能 / メールアドレス認証機能 / パスワードリマインダー / お問い合わせ機能
                         </p>
                     </div>
                     <div class="c-modal__site__info">
                         <span>URL：</span><p><a href="https://task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>https://task-app.shimanamisan.com</a></p>
                     </div>
                     <div class="c-modal__site__info">
-                        <span>GitHub：</span><p><a href="https://github.com/shimanamisan/lineup.git" target="_brank" rel=”noreferrer”>https://github.com/shimanamisan/lineup.git</a></p>
+                        <span>GitHub：</span><p><a href="https://github.com/shimanamisan/lineup.git" target="_brank" rel=”noreferrer”>ソースコード</a></p>
                     </div>
                 </div>
             </div>

@@ -278,7 +278,7 @@ if (!empty($_POST)) {
       <!-- end Skill -->
       <!-- Contact -->
       <section class="p-contents p-contents__contact" id="contact">
-        <div class="l-container l-container__contact u-js-fadeIn">
+        <div class="l-container l-container__contact">
           <h2 class="p-contents__title">Contact</h2>
           <div class="p-contact p-contact__group__wrapp">
             <form action="" method="post">
