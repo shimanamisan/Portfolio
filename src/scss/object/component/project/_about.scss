@@ -3,9 +3,21 @@
     height: 100%;
     width: 100%;
     @include custumShadow(0, 3px, 15px, 0, rgba(88, 88, 88, 0.3));
+    @include mq() {
+      @include custumShadow(0, 0, 0, 0);
+      padding-bottom: 40px;
+    }
     &__inner {
       height: 100%;
       width: 100%;
+      & > img {
+        @include mq() {
+          border-radius: 50%;
+          height: 180px;
+          width: 180px;
+          object-fit: cover;
+        }
+      }
     }
   }
   &__profile {
@@ -20,10 +32,19 @@
     right: -58%;
     @include custumShadow(0, 3px, 15px, 0, rgba(88, 88, 88, 0.3));
     box-sizing: border-box;
+    @include mq() {
+      top: 0;
+      right: 0;
+      width: 100%;
+      padding: 24px;
+    }
   }
   &__name {
     font-size: 2rem;
     margin-bottom: 16px;
+    @include mq() {
+      font-size: 1.7rem;
+    }
   }
   &__text {
     margin-bottom: 16px;

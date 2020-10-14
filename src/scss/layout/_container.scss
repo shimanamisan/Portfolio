@@ -5,7 +5,8 @@
   padding: 80px 112px;
   @include mq(md) {
     width: 100%;
-    padding: 80px 0;
+    padding: 80px 16px;
+    box-sizing: border-box;
   }
   &__skill {
     max-width: 1280px;
@@ -18,11 +19,15 @@
     max-width: 1280px;
     @include mq(md) {
       width: 100%;
-    
     }
   }
-  &__contact{
+  &__contact {
     max-width: 648px;
     margin: 0 auto;
+    @include mq() {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 16px;
+    }
   }
 }

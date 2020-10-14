@@ -85,13 +85,13 @@ if (!empty($_POST)) {
       </section>
       <section class="p-contents p-contents__about" id="about">
         <div class="l-container">
-          <h2 class="p-contents__title">About Me</h2>
-          <div class="p-about__img">
+          <h2 class="p-contents__title u-js-fadeIn">About Me</h2>
+          <div class="p-about__img u-js-fadeIn">
             <div class="p-about__img__inner">
               <img src="./img/img_01.png" alt="プロフィール画像" />
             </div>
           </div>
-          <div class="p-about__profile">
+          <div class="p-about__profile u-js-fadeIn">
             <p class="p-about__name">Hisafumi Nishihara</p>
             <p class="p-about__text">1987年9月10日生まれ、愛媛県出身、兵庫県在住。</p>
             <p class="p-about__text">
@@ -127,7 +127,7 @@ if (!empty($_POST)) {
         <div class="l-container l-container__skill">
           <h2 class="p-contents__title">Skill</h2>
           <div class="p-skill__wrapp">
-            <div class="p-skill__card">
+            <div class="p-skill__card u-js-fadeIn">
               <div class="p-skill__card__inner">
                 <p class="p-skill__title">コーディング</p>
                 <!-- html -->
@@ -154,7 +154,7 @@ if (!empty($_POST)) {
                 </div>
               </div>
             </div>
-            <div class="p-skill__card">
+            <div class="p-skill__card u-js-fadeIn">
               <div class="p-skill__card__inner">
                 <p class="p-skill__title">フロントエンド</p>
                 <!-- javascript -->
@@ -189,7 +189,7 @@ if (!empty($_POST)) {
                 </div>
               </div>
             </div>
-            <div class="p-skill__card">
+            <div class="p-skill__card u-js-fadeIn">
               <div class="p-skill__card__inner">
                 <p class="p-skill__title">バックエンド</p>
                 <!-- php -->
@@ -224,7 +224,7 @@ if (!empty($_POST)) {
                 </div>
               </div>
             </div>
-            <div class="p-skill__card">
+            <div class="p-skill__card u-js-fadeIn">
               <div class="p-skill__card__inner">
                 <p class="p-skill__title">インフラ</p>
                 <!-- apache -->
@@ -244,7 +244,7 @@ if (!empty($_POST)) {
                 </p>
               </div>
             </div>
-            <div class="p-skill__card">
+            <div class="p-skill__card u-js-fadeIn">
               <div class="p-skill__card__inner">
                 <p class="p-skill__title">開発ツール</p>
                 <!-- webpack -->
