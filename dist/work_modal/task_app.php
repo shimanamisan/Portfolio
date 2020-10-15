@@ -32,7 +32,7 @@
                         <span>URL：</span><p><a href="https://task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>https://task-app.shimanamisan.com</a></p>
                     </div>
                     <div class="c-modal__site__info">
-                        <span>GitHub：</span><p><a href="https://github.com/shimanamisan/lineup.git" target="_brank" rel=”noreferrer”>ソースコード</a></p>
+                        <span>GitHub：</span><p><a href="https://github.com/shimanamisan/laravel_vue_todoApp.git" target="_brank" rel=”noreferrer”>ソースコード</a></p>
                     </div>
                 </div>
             </div>

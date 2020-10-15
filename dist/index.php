@@ -88,7 +88,7 @@ if (!empty($_POST)) {
           <h2 class="p-contents__title u-js-fadeIn">About Me</h2>
           <div class="p-about__img u-js-fadeIn">
             <div class="p-about__img__inner">
-              <img src="./img/img_01.png" alt="プロフィール画像" />
+              <img class="p-about__img__profile" src="./img/img_01.png" alt="プロフィール画像" />
             </div>
           </div>
           <div class="p-about__profile u-js-fadeIn">

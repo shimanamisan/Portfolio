@@ -131,15 +131,15 @@
                     </div>
                     <div class="p-work__card__meta">
                         <p>
-                        jQuery、Vue.js、React.jsで作成しています。
+                        各種ライブラリやフレームワークの基礎を学ぶため、jQuery・Vue.js・React.js の3種類で作成しました。
                         </p>
                     </div>
                     <div class="p-work__card__meta">
                         <ul class="p-work__card__meta__list">
                             <li><i class="fas fa-laptop-code"></i></li>
                             <li>jQuery</li>
+                            <li>Gulp</li>
                             <li>Webpack</li>
-                            <li>Babel</li>
                         </ul>
                     </div>
                 </div>

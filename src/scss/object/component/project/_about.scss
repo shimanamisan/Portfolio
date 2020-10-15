@@ -10,13 +10,17 @@
     &__inner {
       height: 100%;
       width: 100%;
-      & > img {
-        @include mq() {
-          border-radius: 50%;
-          height: 180px;
-          width: 180px;
-          object-fit: cover;
-        }
+      @extend %profileIMG; // プレースホルダー（末尾に設定あり）
+      @include mq() {
+        overflow: hidden;
+        margin: auto;
+      }
+    }
+    &__profile {
+      @extend %profileIMG; // プレースホルダー（末尾に設定あり）
+      @include mq() {
+        object-fit: cover;
+        transform: scale(1.4);
       }
     }
   }
@@ -48,5 +52,14 @@
   }
   &__text {
     margin-bottom: 16px;
+  }
+}
+
+// プロフィール写真専用のプレースホルダーセレクタ
+%profileIMG {
+  @include mq() {
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
   }
 }
