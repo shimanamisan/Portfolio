@@ -80,7 +80,7 @@ if (!empty($_POST)) {
     <div class="l-main">
       <section class="p-eyecatch">
         <div class="p-eyecatch__title__wrapp" id="particles-js">
-          <h1 class="p-eyecatch__title animate__fadeOutDown">Welcome My MyPortfolio</h1>
+          <h1 class="p-eyecatch__title animate__fadeOutDown">Welcome To MyPortfolio</h1>
         </div>
       </section>
       <section class="p-contents p-contents__about" id="about">
