@@ -17,6 +17,9 @@
 <div class="c-modal js-muscle-quize" >
     <?php require('work_modal/muscle_quize.php'); ?>
 </div>
+<div class="c-modal js-objquest" >
+    <?php require('work_modal/objquest.php'); ?>
+</div>
 <div class="c-modal js-baseball-item" >
     <?php require('work_modal/baseball_item.php'); ?>
 </div>

@@ -10,7 +10,6 @@ require('head.php');
 // header.php 読み込み
 require('header.php');
 
-
 getIP();
 
 // ページ宣言
