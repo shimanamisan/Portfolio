@@ -10,7 +10,7 @@
                 </video>
             </div>
             <div class="c-modal__site">
-                <h2 class="c-modal__site__title">筋トレクイズアプリ</h1>
+                <h2 class="c-modal__site__title">ドラクエ風バトルゲーム</h1>
                 <div class="c-modal__site__contents">
                     <div class="c-modal__site__detail">
                         <span>内容</span>

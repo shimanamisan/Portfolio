@@ -47,6 +47,16 @@ $(function () {
   });
 
   /****************************************
+フッターの固定
+*****************************************/
+  var $ftr = $("#footer");
+  if (window.innerHeight > $ftr.offset().top + $ftr.outerHeight()) {
+    $ftr.attr({
+      style: "position:fixed; top:" + (window.innerHeight - $ftr.outerHeight()) + "px; width: 100%;",
+    });
+  }
+
+  /****************************************
  スクロールアニメーション
 *****************************************/
   $(window).on("scroll", function () {
@@ -58,9 +68,9 @@ $(function () {
 
       // 要素が画面中央に来た時に発火
       if (scroll > position - windowHeight + 200) {
-        console.log('scroll :' + scroll )
-        console.log('position :' + position)
-        console.log('windowHeight :' + windowHeight)
+        console.log("scroll :" + scroll);
+        console.log("position :" + position);
+        console.log("windowHeight :" + windowHeight);
         $(this).addClass("u-js-fadeIn--active");
       }
     });

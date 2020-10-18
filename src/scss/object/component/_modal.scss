@@ -98,6 +98,7 @@
           object-fit: cover;
           height: 100%;
           width: 100%;
+          outline: none;
           @include custumShadow(0, 3px, 7px, 0, rgba(88, 88, 88, 0.3));
           @include custumRadius(3px);
         }
