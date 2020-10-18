@@ -6,7 +6,7 @@
         <div class="c-modal__body__movie">
             <div class="c-modal__body__movie__inner">
                 <video class="" controls autoplay="" muted="" playsinline="">
-                    <source src="movie/lineup.mp4">
+                    <source src="movie/crypto_trend.mp4">
                 </video>
             </div>
             <div class="c-modal__site">

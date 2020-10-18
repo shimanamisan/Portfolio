@@ -5,9 +5,7 @@
     <div class="c-modal__body__inner">
         <div class="c-modal__body__movie">
             <div class="c-modal__body__movie__inner">
-                <video class="" controls autoplay="" muted="" playsinline="">
-                    <source src="movie/lineup.mp4">
-                </video>
+                <img class="c-modal__body__img" src="./img/MyPortfolio.png" alt="ポートフォリオサイト" />
             </div>
             <div class="c-modal__site">
                 <h2 class="c-modal__site__title">ポートフォリオサイト</h1>
