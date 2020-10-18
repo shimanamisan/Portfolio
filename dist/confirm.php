@@ -7,8 +7,37 @@ require('Library/function.php');
 // head.php 読み込み
 require('head.php');
 
-// header.php 読み込み
-require('header.php');
+
+if (empty($_SESSION['transition'])) {
+    debug('不正に画面遷移してきました。お問い合わせページへ戻ります。confirm.php ');
+    debug('   ');
+    header("Location:index.php");
+    exit();
+}
+
+debug('POSTの中身を確認しています。confirm.php：' . print_r($_POST, true));
+debug('   ');
+
+if (isset($_POST['back']) && $_POST['back']) {
+    debug('前のページへ戻る処理です。confirm.php ');
+    debug('   ');
+    switch (true) {
+    case $_SESSION['mode'] === 'contact':
+      debug('お問い合わせページへ戻ります。confirm.php ');
+      debug('   ');
+      unset($_SESSION['csrf_token']);
+      header("Location:index.php");
+      exit();
+  break;
+    default:
+      debug('エラーが発生しました。トップページへ戻ります。confirm.php ');
+      debug('   ');
+      unset($_SESSION['csrf_token']);
+      header("Location:index.php");
+      exit();
+  }
+}
+
 ?>
 
 
@@ -17,24 +46,15 @@ require('header.php');
         <div class="l-container l-container__contact">
           <h2 class="p-contents__title">Confirm</h2>
           <div class="p-contact p-contact__group__wrapp">
-            <form action="" method="post">
+            <form action="./finish.php" method="post">
               <div class="p-contact__form__wrapp">
                 <label class="p-contact__form__title" for="">
                   <span class="p-contact__form__text">お名前</span>
                   
                 </label>
                 <div class="p-contact__form">
-                  <input class="c-form js-form-name <?php
-                    if (!empty($err_msg['name'])) {
-                        echo 'c-error';
-                    }
-                    ?>" type="text" name="name"  value="<?php echo getFormData('name');?>"/>
-                  <div class="c-error__msg">
-                  <?php
-                    if (!empty($err_msg['name'])) {
-                        echo sanitize('お名前は') . $err_msg['name'];
-                    }
-                    ?>
+                  <div class="p-confirm">
+                    <p class="p-confirm__text"><?php echo getFormData('name');?></p>
                   </div>
                 </div>
               </div>
@@ -44,18 +64,9 @@ require('header.php');
                
                 </label>
                 <div class="p-contact__form">
-                  <input class="c-form <?php
-                    if (!empty($err_msg['email'])) {
-                        echo 'c-error';
-                    }
-                    ?>" type="text" name="email" value="<?php echo getFormData('email');?>"/>
-                    <div class="c-error__msg">
-                    <?php
-                      if (!empty($err_msg['email'])) {
-                          echo sanitize('メールアドレスは') . $err_msg['email'];
-                      }
-                      ?>
-                    </div>
+                  <div class="p-confirm">
+                      <p class="p-confirm__text"><?php echo getFormData('email');?></p>
+                  </div>
                 </div>
               </div>
               <div class="p-contact__form__wrapp">
@@ -64,18 +75,9 @@ require('header.php');
               
                 </label>
                 <div class="p-contact__form">
-                  <input class="c-form <?php
-                    if (!empty($err_msg['subject'])) {
-                        echo 'c-error';
-                    }
-                    ?>" type="text" name="subject" value="<?php echo getFormData('subject');?>"/>
-                    <div class="c-error__msg">
-                    <?php
-                      if (!empty($err_msg['subject'])) {
-                          echo sanitize('タイトルは') . $err_msg['subject'];
-                      }
-                      ?>
-                    </div>
+                  <div class="p-confirm">
+                    <p class="p-confirm__text"><?php echo getFormData('subject');?></p>
+                  </div>
                 </div>
               </div>
               <div class="p-contact__form__wrapp">
@@ -84,34 +86,25 @@ require('header.php');
                   
                 </label>
                 <div class="p-contact__form">
-                  <textarea class="c-form c-form__textarea <?php
-                    if (!empty($err_msg['contact'])) {
-                        echo 'c-error';
-                    }
-                    ?>" type="text" name="contact"><?php echo getFormData('contact');?></textarea>
-                  <div class="c-error__msg">
-                    <?php
-                      if (!empty($err_msg['contact'])) {
-                          echo sanitize('お問い合わせ内容は') . $err_msg['contact'];
-                      }
-                      ?>
-                    </div>
+                  <div class="p-confirm p-confirm__textarea">
+                      <p class="p-confirm__text"><?php echo getFormData('contact');?></p>
+                  </div>
                 </div>
               </div>
-              <button class="c-btn c-btn__back">
-                <span class="c-btn__text">戻る</span>
+              <button class="c-btn" type="submit" name="send" value="send">
+                <span class="c-btn__text">送信する</span>
               </button>
-              <button class="c-btn">
-                <span class="c-btn__text">送信内容を確認する</span>
-              </button>
-            </form>
+              </form>
+              <form method="post" action="">
+                <button class="c-btn c-btn__back" type="submit" name="back" value="back">
+                  <span class="c-btn__text">戻る</span>
+                </button>
+              </form>
           </div>
         </div>
       </section>
       <!-- end Contact -->
 </div>
-
-
 
 <?php
 
