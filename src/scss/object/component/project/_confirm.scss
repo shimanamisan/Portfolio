@@ -1,2 +1,13 @@
 .p-confirm {
+  width: 100%;
+  padding: 8px 12px 9px;
+  @include custumRadius(3px);
+  box-sizing: border-box;
+  text-align: left;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 1.4;
+  &__textarea {
+    min-height: 200px;
+  }
 }
