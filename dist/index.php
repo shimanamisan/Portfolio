@@ -30,16 +30,19 @@ if (!empty($_POST)) {
     // SESSIONの値を表示させているものをクリアする
     clearSession('name');
     clearSession('email');
+    clearSession('subject');
     clearSession('contact');
 
     // 変数にフォームの値を格納
     $name = $_POST['name'];
     $email = $_POST['email'];
+    $subject = $_POST['subject'];
     $contact = $_POST['contact'];
 
     // 入力必須
     validRequire($name, 'name');
     validRequire($email, 'email');
+    validRequire($subject, 'subject');
     validRequire($contact, 'contact');
 
     // バリデーションエラーが無い場合
@@ -55,6 +58,7 @@ if (!empty($_POST)) {
         // 各フォーム文字数チェック
         validMaxLen($name, 'name', 50);
         validMaxLen($email, 'email');
+        validMaxLen($subject, 'subject', 50);
         validContactMaxLen($contact, 'contact');
 
         if (empty($err_msg)) {
@@ -63,6 +67,7 @@ if (!empty($_POST)) {
     
             $_SESSION['name'] = $name;
             $_SESSION['email'] = $email;
+            $_SESSION['subject'] = $subject;
             $_SESSION['contact'] = $contact;
             $_SESSION['transition'] = true;
             $_SESSION['mode'] = $mode;
