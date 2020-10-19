@@ -1,0 +1,15 @@
+.p-finish {
+  &__title {
+    text-align: center;
+  }
+  &__btn {
+    text-align: center;
+    &__wrapp {
+      margin-top: 32px;
+    }
+  }
+  &__text {
+    margin-bottom: 32px;
+    font-size: 1.2rem;
+  }
+}
