@@ -30,7 +30,12 @@
                         <span>URL：</span><p><a href="https://task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>https://task-app.shimanamisan.com</a></p>
                     </div>
                     <div class="c-modal__site__info">
-                        <span>GitHub：</span><p><a href="" target="_brank" rel=”noreferrer”>ソースコード</a></p>
+                        <div class="c-modal__site__infoDetail">
+                            <span>GitHub：</span><p><a href="https://github.com/shimanamisan/vue_todo.git" target="_brank" rel=”noreferrer”>Vue.jsのソースコード</a></p>
+                        </div>
+                        <div class="c-modal__site__infoDetail">
+                            <span>GitHub：</span><p><a href="https://github.com/shimanamisan/jquery_todo.git" target="_brank" rel=”noreferrer”>jQueryのソースコード</a></p>
+                        </div>
                     </div>
                 </div>
             </div>

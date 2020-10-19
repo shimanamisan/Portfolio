@@ -164,4 +164,15 @@ $(function () {
     );
     console.log("contact_positionの値 " + contact_position);
   }
+
+  /***********************************************
+メール送信後、トップページへリダイレクトさせる処理
+*************************************************/
+  let element = document.querySelectorAll("#js-top-redirect");
+  // console.log(element.length);
+  if (element.length !== 0) {
+    setTimeout(function () {
+      window.location.href = "/";
+    }, 3000);
+  }
 });

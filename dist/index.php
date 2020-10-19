@@ -26,6 +26,7 @@ if (isset($_SESSION['mode']) && $_SESSION['mode'] !== $mode) {
 if (!empty($_POST)) {
     debug('POST送信されている処理です。');
     debug('   ');
+
     // POST時の値をフォームに表示させるので、確認画面から戻ってきた場合に
     // SESSIONの値を表示させているものをクリアする
     clearSession('name');
