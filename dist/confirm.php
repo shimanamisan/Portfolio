@@ -38,6 +38,44 @@ if (isset($_POST['back']) && $_POST['back']) {
   }
 }
 
+// セッションに値が入っていたら処理を行う
+if (isset($_SESSION)) {
+    debug('お問いわせ内容がSESSIONに格納されています。confirm.php ' . print_r($_SESSION, true));
+    debug('   ');
+
+    if ($_SESSION['mode'] === 'contact') {
+        // セッションの値を配列に格納
+        $confirm_content = [
+        'お名前' => $_SESSION['name'],
+        'メールアドレス' => $_SESSION['email'],
+        'タイトル' => $_SESSION['subject'],
+        'お問い合わせ内容' => $_SESSION['contact']
+      ];
+    }
+
+    // トークンがSESSIONにセットされていなければセットする
+    if (!isset($_SESSION['csrf_token'])) {
+        // CSRF対策用のトークン
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+  
+    // isset($_POST['send'])で'send'というキーが存在しているかを判定し、存在していれば$_POST['send']の値をチェックする
+    // $_POST['send']だけだと、POST送信した際にキーが存在していなかった場合にNoticeエラーになる
+    if (isset($_POST['send']) && $_POST['send']) {
+        debug('isset($_POST[send]) の判定を見ています。confirm.php ' . isset($_POST['send']));
+        debug('   ');
+        debug('メールを送信する処理です。次の画面へ遷移します。confirm.php ' . print_r($_POST, true));
+        debug('   ');
+        header("Location:finish.php");
+        exit();
+    }
+} else {
+    debug('セッションが空だったので前のページへ戻ります。。confirm.php ');
+    debug('   ');
+    header("Location:contact.php");
+    exit();
+}
+
 ?>
 
 
@@ -46,7 +84,8 @@ if (isset($_POST['back']) && $_POST['back']) {
         <div class="l-container l-container__contact">
           <h2 class="p-contents__title">Confirm</h2>
           <div class="p-contact p-contact__group__wrapp">
-            <form action="./finish.php" method="post">
+            <form method="post" action="./finish.php">
+            <input type="hidden" name="csrf_token" value="<?php echo sanitize($_SESSION['csrf_token']);?>">
               <div class="p-contact__form__wrapp">
                 <label class="p-contact__form__title" for="">
                   <span class="p-contact__form__text">お名前</span>
@@ -91,15 +130,17 @@ if (isset($_POST['back']) && $_POST['back']) {
                   </div>
                 </div>
               </div>
-              <button class="c-btn" type="submit" name="send" value="send">
-                <span class="c-btn__text">送信する</span>
-              </button>
-              </form>
-              <form method="post" action="">
-                <button class="c-btn c-btn__back" type="submit" name="back" value="back">
-                  <span class="c-btn__text">戻る</span>
-                </button>
-              </form>
+                <div class="c-btn__wrapp">
+                  <button class="c-btn p-confirm__btn" type="submit" name="send" value="send">
+                    <span class="c-btn__text">送信する</span>
+                  </button>
+                  </form>
+                  <form method="post" action="">
+                      <button class="c-btn c-btn__back" type="submit" name="back" value="back">
+                        <span class="c-btn__text">戻る</span>
+                      </button>
+                  </form>
+                </div>
           </div>
         </div>
       </section>
