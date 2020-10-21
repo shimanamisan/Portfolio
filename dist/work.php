@@ -215,7 +215,7 @@
                     </div>
                     <div class="p-work__card__meta">
                         <p>
-                            フルスクラッチでフレームワークを使用せず生PHPでWebサービスを開発しました
+                            フルスクラッチでフレームワークを使用せず生PHPでWebサービスを開発しました。
                         </p>
                     </div>
                     <div class="p-work__card__meta">
