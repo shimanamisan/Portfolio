@@ -176,19 +176,18 @@
             <li class="p-work__card u-js-fadeIn">
                 <div class="p-work__card__inner">
                 <div class="p-work__img__wrapp js-modal__open" data-modal-link="js-objquest">
-                    <img class="p-work__img" src="./img/muscle_quize.png" alt="ドラクエ風バトルゲーム" />
+                    <img class="p-work__img" src="./img/obj_quest.png" alt="ドラクエ風バトルゲーム" />
                 </div>
                 <div class="p-work__card__detail">
-                    <h3 class="p-work__detail__title">Muscle Quize</h3>
+                    <h3 class="p-work__detail__title">オブジェクエスト</h3>
                     <div class="p-work__card__meta">
                         <p>
-                            ドラクエ風バトルゲームです。
+                            オブジェクト指向を学習するために作成した、ドラクエ風バトルゲームです。
                         </p>
                     </div>
                     <div class="p-work__card__meta">
                         <p>
-                            PHPオブジェクト指向の学習の一環として作成しました。
-                            クラス設計やメソッドの配置など、オブジェクト指向に関する基礎的な知識を学ぶことが出来ました。
+                        クラス設計やメソッドの配置など、オブジェクト指向に関する基礎的な知識を学ぶことが出来ました。
                         </p>
                     </div>
                     <div class="p-work__card__meta">
