@@ -5,9 +5,14 @@
     <div class="c-modal__body__inner">
         <div class="c-modal__body__movie">
             <div class="c-modal__body__movie__inner">
-                <video class="" controls autoplay="" muted="" playsinline="">
+                <!-- <video class="" controls autoplay="" muted="" playsinline="">
                     <source src="movie/crypto_trend.mp4">
-                </video>
+                </video> -->
+                <iframe
+                    class="c-modal__youtube"
+                    src="https://www.youtube.com/embed/WfiwgiDlYtk"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
             </div>
             <div class="c-modal__site">
                 <h2 class="c-modal__site__title">仮想通貨トレンド分析サービス</h1>

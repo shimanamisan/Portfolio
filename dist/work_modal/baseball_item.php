@@ -5,9 +5,9 @@
     <div class="c-modal__body__inner">
         <div class="c-modal__body__movie">
             <div class="c-modal__body__movie__inner">
-                <video class="" controls autoplay="" muted="" playsinline="">
+                <!-- <video class="" controls autoplay="" muted="" playsinline="">
                     <source src="movie/baseball_item.mp4">
-                </video>
+                </video> -->
             </div>
             <div class="c-modal__site">
                 <h2 class="c-modal__site__title">野球専門フリーマーケットサイト</h1>

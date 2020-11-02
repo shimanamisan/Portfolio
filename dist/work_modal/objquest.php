@@ -5,8 +5,8 @@
     <div class="c-modal__body__inner">
         <div class="c-modal__body__movie">
             <div class="c-modal__body__movie__inner">
-                <video class="" controls autoplay="" muted="" playsinline="">
-                    <source src="movie/xxx.mp4">
+                <!-- <video class="" controls autoplay="" muted="" playsinline="">
+                    <source src="movie/xxx.mp4"> -->
                 </video>
             </div>
             <div class="c-modal__site">
