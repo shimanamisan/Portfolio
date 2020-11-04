@@ -83,6 +83,9 @@ if (!empty($_POST)) {
 ?>
 
     <div class="l-main">
+      <div class="c-load js-loading">
+        <div class="c-load__icon">Loading...</div>
+      </div>
       <section class="p-eyecatch">
         <div class="p-eyecatch__title__wrapp" id="particles-js">
           <h1 class="p-eyecatch__title animate__fadeOutDown">Welcome To MyPortfolio</h1>
