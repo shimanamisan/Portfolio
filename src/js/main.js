@@ -7,7 +7,43 @@ particlesJS.load("particles-js", "../particles.json", function () {
   console.log("callback - particles.js config loaded");
 });
 
+
 $(function () {
+  
+  // Cookie読み出し用の関数
+  function getCookie(key) {
+    // Cookieから値を取得する
+    let cookieString = document.cookie;
+    // 要素ごとに ; で区切られているので、 ; で切り出しを行う。新しく配列として生成
+    // ここでは前後にスペースが入っている
+    let cookieKeyArray = cookieString.split(";");
+  
+    // 要素分ループを行う
+    for (let i = 0; i < cookieKeyArray.length; i++) {
+      let targetCookie = cookieKeyArray[i];
+  
+      // 前後のスペースをカットする
+      targetCookie = targetCookie.replace(/^\s+|\s+$/g, "");
+  
+      // indexOf("=") とすると、= という文字が何番目にあるのか、というのが返ってくる
+      let valuIndex = targetCookie.indexOf("=");
+      console.log(valuIndex);
+  
+      if (targetCookie.substring(0, valuIndex) == key) {
+        // キーが引数と一致した場合値を返す
+        console.log(valuIndex); // 4
+        console.log(targetCookie.substring(0, valuIndex)); // name
+        console.log(typeof targetCookie);
+        console.log("targetCookieのif文でtrueの判定です " + targetCookie);
+        return decodeURIComponent(targetCookie.slice(valuIndex + 1));
+      }
+    }
+  
+    // 一致するものがなければ空文字を返す
+    return "";
+  }
+  
+  console.log("getCookie関数：" + getCookie("name"));
   let $menu = $(".js-menu");
   let $nav_bg = $(".js-nav-background");
   let $nav = $(".js-nav");
@@ -21,6 +57,29 @@ $(function () {
     $(this).toggleClass("burger--active"); // アロー関数にしていると、ここのthisがdocumentオブジェクトが指定される
     $nav.toggleClass("p-header__nav--active");
   });
+
+  /****************************************
+ローデイングアニメーション（初回のみ表示）
+*****************************************/
+  let $jsLoading = $(".js-loading");
+  // ローディングアイコンの表示の制御にcookieを使用
+  if(getCookie("name") === ""){
+    // スタイリングで opacity: 0; にしているのでローディングアイコンを表示させる
+    $jsLoading.css("opacity","1")
+    $(window).on("load", function(){
+      console.log("load!!")
+      $jsLoading.fadeOut('slow');
+    })
+
+    // Cookieに初回アクセス時か判定する値を記述する
+    // 2回目以降のアクセスの際は、この値がcookieにセットされているのでローディングアイコンは非表示になる
+    document.cookie = "name=" + encodeURIComponent("first_access");
+    
+  } else {
+    // 2回目以降のアクセスではローディングアイコンは表示させない
+    $jsLoading.css("display", "none");
+    console.log("2回目以降のアクセスです")
+  }
 
   /****************************************
 リンク内のスムーズスクロール
