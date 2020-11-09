@@ -5,9 +5,13 @@
     <div class="c-modal__body__inner">
         <div class="c-modal__body__movie">
             <div class="c-modal__body__movie__inner">
-                <!-- <video class="" controls autoplay="" muted="" playsinline="">
-                    <source src="movie/xxx.mp4">
-                </video> -->
+                <iframe 
+                    class="c-modal__youtube"
+                    src="https://www.youtube.com/embed/cZHKPbWCeHE?autoplay=1&loop=1&playlist=cZHKPbWCeHE&rel=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
             </div>
             <div class="c-modal__site">
                 <h2 class="c-modal__site__title">筋トレクイズアプリ</h1>
@@ -15,11 +19,11 @@
                     <div class="c-modal__site__detail">
                         <span>内容</span>
                         <p>
-                            PHPオブジェクト指向の学習のアウトプットとして作成しました。
+                            PHPオブジェクト指向の理解をさらに深めるためにクイズ形式のアプリを作成しました。
+                            問題の正誤判定にはAjax通信を使用し、正解・不正解の際にアニメーションを取り入れて
+                            ユーザーを楽しませれるよう、遊び心を取り入れました。
                         </p>
-                        <p>
-                            
-                        </p>
+    
                         <span>機能</span>
                         <p>
                             難易度選択（簡単・普通・難しい） / 結果をツイートする機能

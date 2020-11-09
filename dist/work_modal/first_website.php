@@ -5,9 +5,12 @@
     <div class="c-modal__body__inner">
         <div class="c-modal__body__movie">
             <div class="c-modal__body__movie__inner">
-                <!-- <video class="" controls autoplay="" muted="" playsinline="">
-                    <source src="movie/lineup.mp4">
-                </video> -->
+            <iframe
+            class="c-modal__youtube"
+                src="https://www.youtube.com/embed/M41-a9vURpY?autoplay=1&loop=1&playlist=M41-a9vURpY&rel=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
             </div>
             <div class="c-modal__site">
                 <h2 class="c-modal__site__title">架空のカフェサイト</h1>

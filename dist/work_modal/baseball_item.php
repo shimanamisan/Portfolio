@@ -16,13 +16,26 @@
                         <span>内容</span>
                         <p>
                             学習期間3ヶ月を経過した後に、Webサービスの機能の実装方法や設計などアウトプットを目的としてサービスの開発を行いました。
-                            フルスクラッチでフレームワークを使わず生PHPでバックエンドの機能を実装しました。
+                            フルスクラッチでフレームワークを使わず生のPHPで、認証関連のCRUD機能やページネーション機能、お気に入り機能などを実装しました。
+                        </p>
+                        <p>
+                            野球が好きなので、何か野球に関する題材でWebサービスを開発してみたいと思い考案し、
+                            不要になった道具を手軽に出品出来て売買出来るよう、フリーマーケットという形のサービスにしました。
                         </p>
                         <span>機能</span>
                         <p>
                             ユーザー登録・ログイン・ログアウト・退会機能 / パスワードリマインダー / 商品登録・編集機能 / ページネーション
                             / マイページ機能 / お気に入り機能 / 連絡掲示板機能 / 商品検索機能
                         </p>
+                        <span>テストユーザー</span>
+                        <div class="c-modal__site__info">
+                            <div>
+                            メールアドレス： test@mail.com
+                            </div>
+                            <div>
+                            パスワード： password
+                            </div>
+                        </div>
                     </div>
                     <div class="c-modal__site__info">
                         <span>URL：</span><p><a href="https://baseball-item.shimanamisan.com/index.php" target="_brank" rel=”noreferrer”>https://baseball-item.shimanamisan.com/index.php</a></p>
