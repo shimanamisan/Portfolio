@@ -2,47 +2,51 @@
 /****************************************
  共通関数読み込み
 *****************************************/
-require('Library/function.php');
+require 'Library/function.php';
 
 // head.php 読み込み
-require('head.php');
+require 'head.php';
 
 // トップへ戻るのボタンが押された際の処理
 if (isset($_POST['top']) && $_POST['top']) {
-    header("Location:index.php");
-    exit();
+  header("Location:index.php");
+  exit();
 }
 
 if (empty($_SESSION['transition'])) {
-    debug('不正に画面遷移してきました。お問い合わせページへ戻ります。finish.php ');
-    debug('   ');
-    header("Location:contact.php");
-    exit();
+  debug(
+    '不正に画面遷移してきました。お問い合わせページへ戻ります。finish.php '
+  );
+  debug('   ');
+  header("Location:contact.php");
+  exit();
 }
 
 // csrf対策
 if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-    debug('トークンが一致していません。お問い合わせページへ戻ります。finish.php ');
-    debug('   ');
-    $_SESSION = [];
-    session_destroy();
-    header("Location:contact.php");
+  debug(
+    'トークンが一致していません。お問い合わせページへ戻ります。finish.php '
+  );
+  debug('   ');
+  $_SESSION = [];
+  session_destroy();
+  header("Location:contact.php");
 }
 
 // セッションのユーザー情報を格納
 if ($_SESSION['mode'] === 'contact') {
-    /****************************************
+  /****************************************
  メンバー募集から遷移してきた時の処理
 *****************************************/
-    $name = $_SESSION['name'];
-    $email = $_SESSION['email'];
-    $userSubject = $_SESSION['subject'];
-    $contact = $_SESSION['contact'];
+  $name = $_SESSION['name'];
+  $email = $_SESSION['email'];
+  $userSubject = $_SESSION['subject'];
+  $contact = $_SESSION['contact'];
 
-    $from = 'itsup-info@shimanamisan.com';
-    $to = $email;
-    $subject = 'お問い合わせ内容を受け付けました。';
-    $comment = <<<EOT
+  $from = 'itsup-info@shimanamisan.com';
+  $to = $email;
+  $subject = 'お問い合わせ内容を受け付けました。';
+  $comment = <<<EOT
 {$name}　様
 お問い合わせありがとうございます。
 以下のお問合せ内容を、メールにて確認させて頂きました。
@@ -69,12 +73,12 @@ if ($_SESSION['mode'] === 'contact') {
 Copyright (C) Hisafumi Nishihara All Right Reserved.
 EOT;
 
-    /****************************************
+  /****************************************
      管理者へ通知する内容
     *****************************************/
-    $toAdmin = 'itsup-info@shimanamisan.com';
-    $subjectAdmin = 'メッセージを受信しました｜MyPortfolio';
-    $commentAdmin = <<<EOT
+  $toAdmin = 'itsup-info@shimanamisan.com';
+  $subjectAdmin = 'メッセージを受信しました｜MyPortfolio';
+  $commentAdmin = <<<EOT
 ウェブサイトより下記のお問い合わせが有りました。
 ===================================================
 【 お名前 】 
@@ -103,9 +107,11 @@ sendMailAdmin($toAdmin, $subjectAdmin, $commentAdmin);
 $_SESSION = [];
 // セッションを削除
 session_destroy();
-debug('メールを送信したので、セッションを削除しました。finish.php：'. print_r($_SESSION, true));
+debug(
+  'メールを送信したので、セッションを削除しました。finish.php：' .
+    print_r($_SESSION, true)
+);
 debug('   ');
-
 ?>
 
 
@@ -137,8 +143,8 @@ debug('   ');
 </div>
 
 <?php
-
 // footer.php 読み込み
-require('footer.php');
+// footer.php 読み込み
+?>require 'footer.php';
 
 ?>

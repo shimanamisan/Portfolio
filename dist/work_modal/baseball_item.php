@@ -5,9 +5,13 @@
     <div class="c-modal__body__inner">
         <div class="c-modal__body__movie">
             <div class="c-modal__body__movie__inner">
-                <!-- <video class="" controls autoplay="" muted="" playsinline="">
-                    <source src="movie/baseball_item.mp4">
-                </video> -->
+                <iframe
+                    class="c-modal__youtube"
+                    src="https://www.youtube.com/embed/1zHsfdUqa7o?autoplay=1&loop=1&playlist=1zHsfdUqa7o&rel=0"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
             </div>
             <div class="c-modal__site">
                 <h2 class="c-modal__site__title">野球専門フリーマーケットサイト</h1>
@@ -38,7 +42,7 @@
                         </div>
                     </div>
                     <div class="c-modal__site__info">
-                        <span>URL：</span><p><a href="https://baseball-item.shimanamisan.com/index.php" target="_brank" rel=”noreferrer”>https://baseball-item.shimanamisan.com/index.php</a></p>
+                        <span>URL：</span><p><a href="https://baseball-item.shimanamisan.com" target="_brank" rel=”noreferrer”>https://baseball-item.shimanamisan.com</a></p>
                     </div>
                     <div class="c-modal__site__info">
                         <span>GitHub：</span><p><a href="https://github.com/shimanamisan/baseball_market.git" target="_brank" rel=”noreferrer”>ソースコード</a></p>

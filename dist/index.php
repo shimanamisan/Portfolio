@@ -2,14 +2,15 @@
 /****************************************
  共通関数読み込み
 *****************************************/
-require('Library/function.php');
+require 'Library/function.php';
 
 // head.php 読み込み
-require('head.php');
+require 'head.php';
 
 // header.php 読み込み
-require('header.php');
+require 'header.php';
 
+// IPアドレスを取得
 getIP();
 
 // ページ宣言
@@ -17,8 +18,8 @@ $mode = 'contact';
 
 if (isset($_SESSION['mode']) && $_SESSION['mode'] !== $mode) {
     $_SESSION = []; // セッションをする前に空にする
-    session_destroy(); // この時点ではセッションは削除されない
-    debug(' contact.php' . print_r($_SESSION, true));
+  session_destroy(); // この時点ではセッションは削除されない
+  debug(' contact.php' . print_r($_SESSION, true));
     debug('   ');
 }
 
@@ -65,7 +66,7 @@ if (!empty($_POST)) {
         if (empty($err_msg)) {
             debug('バリデーションOKの時の処理です。');
             debug('   ');
-    
+
             $_SESSION['name'] = $name;
             $_SESSION['email'] = $email;
             $_SESSION['subject'] = $subject;
@@ -78,8 +79,6 @@ if (!empty($_POST)) {
         }
     }
 }
-
-
 ?>
 
     <div class="l-main">
@@ -116,18 +115,16 @@ if (!empty($_POST)) {
 
         <?php
         // 切り出しファイルを読み込み
-        require('profile_modal.php');
-        ?>
+        require 'profile_modal.php'; ?>
 
       </section>
 
     <?php
-    
     // 切り出したパーツを読み込む
-    require('work.php');
+    require 'work.php';
 
     // 作品紹介用のモーダル
-    require('work_modal.php');
+    require 'work_modal.php';
     ?>
 
       <!-- Skill -->
@@ -218,12 +215,6 @@ if (!empty($_POST)) {
                   <p>laravel</p>
                 </div>
                 <!-- end laravel -->
-                <!-- fuelphp -->
-                <!-- <div class="p-skill__card__detail">
-                  <img src="./img/fuelphp_logo.svg" alt="fuelphpロゴ" />
-                  <p>fuelphp</p>
-                </div> -->
-                <!-- end fuelphp -->
                 <div class="p-skill__text__inner">
                   <p class="p-skill__text">
                     フレームワークを使用せず、フルスクラッチでWebサービスの開発の練習を行うことで、基礎的な知識を養ってきました。
@@ -296,17 +287,17 @@ if (!empty($_POST)) {
                   <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
                 </label>
                 <div class="p-contact__form">
-                  <input class="c-form js-form-name <?php
-                    if (!empty($err_msg['name'])) {
-                        echo 'c-error';
-                    }
-                    ?>" type="text" name="name"  value="<?php echo getFormData('name');?>"/>
+                  <input class="c-form js-form-name <?php if (
+                    !empty($err_msg['name'])
+                  ) {
+        echo 'c-error';
+    } ?>" type="text" name="name"  value="<?php echo getFormData(
+        'name'
+    ); ?>"/>
                   <div class="c-error__msg">
-                  <?php
-                    if (!empty($err_msg['name'])) {
-                        echo sanitize('お名前は') . $err_msg['name'];
-                    }
-                    ?>
+                  <?php if (!empty($err_msg['name'])) {
+        echo sanitize('お名前は') . $err_msg['name'];
+    } ?>
                   </div>
                 </div>
               </div>
@@ -316,17 +307,15 @@ if (!empty($_POST)) {
                   <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
                 </label>
                 <div class="p-contact__form">
-                  <input class="c-form <?php
-                    if (!empty($err_msg['email'])) {
-                        echo 'c-error';
-                    }
-                    ?>" type="text" name="email" value="<?php echo getFormData('email');?>"/>
+                  <input class="c-form <?php if (!empty($err_msg['email'])) {
+        echo 'c-error';
+    } ?>" type="text" name="email" value="<?php echo getFormData(
+        'email'
+    ); ?>"/>
                     <div class="c-error__msg">
-                    <?php
-                      if (!empty($err_msg['email'])) {
-                          echo sanitize('メールアドレスは') . $err_msg['email'];
-                      }
-                      ?>
+                    <?php if (!empty($err_msg['email'])) {
+        echo sanitize('メールアドレスは') . $err_msg['email'];
+    } ?>
                     </div>
                 </div>
               </div>
@@ -336,17 +325,15 @@ if (!empty($_POST)) {
                   <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
                 </label>
                 <div class="p-contact__form">
-                  <input class="c-form <?php
-                    if (!empty($err_msg['subject'])) {
-                        echo 'c-error';
-                    }
-                    ?>" type="text" name="subject" value="<?php echo getFormData('subject');?>"/>
+                  <input class="c-form <?php if (!empty($err_msg['subject'])) {
+        echo 'c-error';
+    } ?>" type="text" name="subject" value="<?php echo getFormData(
+        'subject'
+    ); ?>"/>
                     <div class="c-error__msg">
-                    <?php
-                      if (!empty($err_msg['subject'])) {
-                          echo sanitize('タイトルは') . $err_msg['subject'];
-                      }
-                      ?>
+                    <?php if (!empty($err_msg['subject'])) {
+    echo sanitize('タイトルは') . $err_msg['subject'];
+} ?>
                     </div>
                 </div>
               </div>
@@ -356,17 +343,17 @@ if (!empty($_POST)) {
                   <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
                 </label>
                 <div class="p-contact__form">
-                  <textarea class="c-form c-form__textarea <?php
-                    if (!empty($err_msg['contact'])) {
-                        echo 'c-error';
-                    }
-                    ?>" type="text" name="contact"><?php echo getFormData('contact');?></textarea>
+                  <textarea class="c-form c-form__textarea <?php if (
+                    !empty($err_msg['contact'])
+                  ) {
+    echo 'c-error';
+} ?>" type="text" name="contact"><?php echo getFormData(
+    'contact'
+); ?></textarea>
                   <div class="c-error__msg">
-                    <?php
-                      if (!empty($err_msg['contact'])) {
-                          echo sanitize('お問い合わせ内容は') . $err_msg['contact'];
-                      }
-                      ?>
+                    <?php if (!empty($err_msg['contact'])) {
+    echo sanitize('お問い合わせ内容は') . $err_msg['contact'];
+} ?>
                     </div>
                 </div>
               </div>
@@ -380,9 +367,6 @@ if (!empty($_POST)) {
       <!-- end Contact -->
     </div>
 
-<?php
-
-// footer.php 読み込み
-require('footer.php');
-
+<?php // footer.php 読み込み
+require 'footer.php';
 ?>

@@ -30,7 +30,7 @@
                         </p>
                     </div>
                     <div class="c-modal__site__info">
-                        <span>URL：</span><p><a href="https://shimanamisan.github.io/first_website/" target="_brank" rel=”noreferrer”>https://shimanamisan.github.io/first_website/</a></p>
+                        <span>URL：</span><p><a href="https://shimanamisan.github.io/first_website" target="_brank" rel=”noreferrer”>https://shimanamisan.github.io/first_website/</a></p>
                     </div>
                     <div class="c-modal__site__info">
                         <span>GitHub：</span><p><a href="https://github.com/shimanamisan/first_website.git" target="_brank" rel=”noreferrer”>ソースコード</a></p>

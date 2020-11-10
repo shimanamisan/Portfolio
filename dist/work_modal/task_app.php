@@ -31,6 +31,15 @@
                             ユーザー登録・ログイン・ログアウト・退会機能 / Twitter認証機能 / タスクCRUD機能（フォルダ、カード、タスクアイテム） / タスクソート機能（ドラッグ&ドロップ） /
                             マイページ機能 / メールアドレス認証機能 / パスワードリマインダー / お問い合わせ機能
                         </p>
+                        <span>テストユーザー</span>
+                        <div class="c-modal__site__info">
+                            <div>
+                            メールアドレス： test01@mail.com
+                            </div>
+                            <div>
+                            パスワード： password
+                            </div>
+                        </div>
                     </div>
                     <div class="c-modal__site__info">
                         <span>URL：</span><p><a href="https://task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>https://task-app.shimanamisan.com</a></p>

@@ -32,10 +32,10 @@
                     </div>
                     <div class="c-modal__site__info">
                         <div class="c-modal__site__infoDetail">
-                            <span>URL：</span><p><a href="http://vue-task-app.shimanamisan.com/" target="_brank" rel=”noreferrer”>Vue.jsのTODOリスト</a></p>
+                            <span>URL：</span><p><a href="http://vue-task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>Vue.jsのTODOリスト</a></p>
                         </div>
                         <div class="c-modal__site__infoDetail">
-                            <span>URL：</span><p><a href="https://jq-task-app.shimanamisan.com/" target="_brank" rel=”noreferrer”>jQueryのTODOリスト</a></p>
+                            <span>URL：</span><p><a href="https://jq-task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>jQueryのTODOリスト</a></p>
                         </div>
                     </div>
                     <div class="c-modal__site__info">
