@@ -164,8 +164,8 @@ const php_serve = function () {
   gulp.watch(paths.dstDir + "/js/*.js").on("change", browserSync.reload);
   gulp.watch(paths.dstDir + "/css/*.css").on("change", browserSync.reload);
 
-  gulp.watch("./dist/*.html").on("change", browserSync.reload);
-  gulp.watch("./dist/*.php").on("change", browserSync.reload);
+  gulp.watch("./dist/**/*.html").on("change", browserSync.reload);
+  gulp.watch("./dist/**/*.php").on("change", browserSync.reload);
 };
 
 // gulp コマンドで下記のタスクが実行される

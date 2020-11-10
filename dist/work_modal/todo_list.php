@@ -5,9 +5,13 @@
     <div class="c-modal__body__inner">
         <div class="c-modal__body__movie">
             <div class="c-modal__body__movie__inner">
-                <!-- <video class="" controls autoplay="" muted="" playsinline="">
-                    <source src="movie/lineup.mp4">
-                </video> -->
+                <iframe 
+                    class="c-modal__youtube"
+                    src="https://www.youtube.com/embed/hEwLZFXtVVw?autoplay=1&loop=1&playlist=hEwLZFXtVVw&rel=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
             </div>
             <div class="c-modal__site">
                 <h2 class="c-modal__site__title">TODOリスト</h1>
@@ -28,10 +32,10 @@
                     </div>
                     <div class="c-modal__site__info">
                         <div class="c-modal__site__infoDetail">
-                            <span>URL：</span><p><a href="http://vue-task-app.shimanamisan.com/" target="_brank" rel=”noreferrer”>Vue.jsのTODOリスト</a></p>
+                            <span>URL：</span><p><a href="http://vue-task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>Vue.jsのTODOリスト</a></p>
                         </div>
                         <div class="c-modal__site__infoDetail">
-                            <span>URL：</span><p><a href="https://jq-task-app.shimanamisan.com/" target="_brank" rel=”noreferrer”>jQueryのTODOリスト</a></p>
+                            <span>URL：</span><p><a href="https://jq-task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>jQueryのTODOリスト</a></p>
                         </div>
                     </div>
                     <div class="c-modal__site__info">
