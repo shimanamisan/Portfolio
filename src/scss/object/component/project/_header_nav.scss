@@ -29,6 +29,7 @@
     }
   }
   &__background {
+    display: block;
     border-radius: 50%;
     top: 2.8rem;
     right: 2.8rem;
@@ -40,6 +41,7 @@
     z-index: 500;
     background-size: cover;
     background-position: 50%;
+    backface-visibility: hidden;
     transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
     @include mq() {
       top: 2.3rem;
@@ -47,6 +49,11 @@
     }
     &--active {
       transform: scale(100);
+      @include mq() {
+        // スマホ画面でも scale(100) にしていたらメニューを閉じた時に一瞬背景が消える（スマホ側の処理の問題？）ので
+        // 拡大の倍率をスマホ用に変更
+        transform: scale(30);
+      }
     }
   }
   &__wrapp {

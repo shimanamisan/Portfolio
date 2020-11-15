@@ -34,7 +34,7 @@
                         <span>テストユーザー</span>
                         <div class="c-modal__site__info">
                             <div>
-                            メールアドレス： test@mail.com
+                            メールアドレス： test01@mail.com
                             </div>
                             <div>
                             パスワード： password
