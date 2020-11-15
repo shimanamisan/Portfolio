@@ -32,10 +32,13 @@
                     </div>
                     <div class="c-modal__site__info">
                         <div class="c-modal__site__infoDetail">
-                            <span>URL：</span><p><a href="http://vue-task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>Vue.jsのTODOリスト</a></p>
+                            <span>URL：</span><p><a href="http://vue-task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>Vue.jsで作成したTODOリスト</a></p>
                         </div>
                         <div class="c-modal__site__infoDetail">
-                            <span>URL：</span><p><a href="https://jq-task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>jQueryのTODOリスト</a></p>
+                            <span>URL：</span><p><a href="https://jq-task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>jQueryで作成したTODOリスト</a></p>
+                        </div>
+                        <div class="c-modal__site__infoDetail">
+                            <span>URL：</span><p><a href="https://react-task-app.shimanamisan.com" target="_brank" rel=”noreferrer”>React.jsで作成したTODOリスト</a></p>
                         </div>
                     </div>
                     <div class="c-modal__site__info">
@@ -44,6 +47,9 @@
                         </div>
                         <div class="c-modal__site__infoDetail">
                             <span>GitHub：</span><p><a href="https://github.com/shimanamisan/jquery_todo.git" target="_brank" rel=”noreferrer”>jQueryのソースコード</a></p>
+                        </div>
+                        <div class="c-modal__site__infoDetail">
+                            <span>GitHub：</span><p><a href="https://github.com/shimanamisan/react_todo.git" target="_brank" rel=”noreferrer”>React.jsのソースコード</a></p>
                         </div>
                     </div>
                 </div>
