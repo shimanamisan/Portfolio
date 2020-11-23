@@ -21,6 +21,15 @@
                         アニメーションやJavaScriptのライブラリ等を使用し、リッチなデザインに仕上げました。
                     </p>
                 </div>
+                <p class="p-work__card__dev">開発期間</p>
+                    <div class="p-work__card__meta">
+                        <p>
+                            2020/8/26 〜 2020/9/10
+                        </p>
+                        <p>
+                            30時間
+                        </p>
+                    </div>
                     <div class="p-work__card__meta">
                         <ul class="p-work__card__meta__list">
                             <li><i class="fas fa-laptop-code"></i></li>
@@ -46,6 +55,15 @@
                     </div>
                     <div class="p-work__card__meta">
                         <p>要件定義、デザイン、ロゴの作成、コーディング、サーバの設定など全て1人で行いました。</p>
+                    </div>
+                    <p class="p-work__card__dev">開発期間</p>
+                    <div class="p-work__card__meta">
+                        <p>
+                            2020/8/1 〜 2020/8/30
+                        </p>
+                        <p>
+                            20時間
+                        </p>
                     </div>
                     <div class="p-work__card__meta">
                         <ul class="p-work__card__meta__list">
@@ -76,6 +94,15 @@
                             スクールの卒業試験として、提示された要件を元に3ヶ月という期限の中で開発を進めました。
                         </p> 
                     </div>
+                    <p class="p-work__card__dev">開発期間</p>
+                    <div class="p-work__card__meta">
+                        <p>
+                            2020/5/19 〜 2020/8/11
+                        </p>
+                        <p>
+                            210時間
+                        </p>
+                    </div>
                     <div class="p-work__card__meta">
                         <ul class="p-work__card__meta__list">
                             <li><i class="fas fa-laptop-code"></i></li>
@@ -103,6 +130,15 @@
                     <div class="p-work__card__meta">
                         <p>
                             フロントエンドとバックエンドのフレームワークの学習後のアウトプットとして作成しました。
+                        </p>
+                    </div>
+                    <p class="p-work__card__dev">開発期間</p>
+                    <div class="p-work__card__meta">
+                        <p>
+                            2020/1/20 〜 2020/3/20
+                        </p>
+                        <p>
+                            220時間
                         </p>
                     </div>
                     <div class="p-work__card__meta">
@@ -134,6 +170,15 @@
                         各種ライブラリやフレームワークの基礎を学ぶため、jQuery・Vue.js・React.js の3種類で作成しました。
                         </p>
                     </div>
+                    <p class="p-work__card__dev">開発期間</p>
+                    <div class="p-work__card__meta">
+                        <p>
+                            2019/10/18 〜 2019/12/25
+                        </p>
+                        <p>
+                            53時間
+                        </p>
+                    </div>
                     <div class="p-work__card__meta">
                         <ul class="p-work__card__meta__list">
                             <li><i class="fas fa-laptop-code"></i></li>
@@ -160,7 +205,17 @@
                     <div class="p-work__card__meta">
                         <p>
                             PHPオブジェクト指向を学習後、更に理解を深めるために作成しました。
-                            オブジェクト指向を学習したことは、今後フレームワークに触れる上で重要な役割を果たしました。
+                            オブジェクト指向を学習したことによって、PHPフレームワークを利用した際も抵抗なく学習できました。
+                        </p>
+                        
+                    </div>
+                    <p class="p-work__card__dev">開発期間</p>
+                    <div class="p-work__card__meta">
+                        <p>
+                            2019/8/26 〜 2019/9/10
+                        </p>
+                        <p>
+                            30時間
                         </p>
                     </div>
                     <div class="p-work__card__meta">
@@ -190,6 +245,15 @@
                         クラス設計やメソッドの配置など、オブジェクト指向に関する基礎的な知識を学ぶことが出来ました。
                         </p>
                     </div>
+                    <p class="p-work__card__dev">開発期間</p>
+                    <div class="p-work__card__meta">
+                        <p>
+                            2019/8/20 〜 2019/8/25
+                        </p>
+                        <p>
+                            10時間
+                        </p>
+                    </div>
                     <div class="p-work__card__meta">
                         <ul class="p-work__card__meta__list">
                             <li><i class="fas fa-laptop-code"></i></li>
@@ -214,7 +278,17 @@
                     </div>
                     <div class="p-work__card__meta">
                         <p>
+                            「1からWebサービスを開発する」ということを目標に、
                             フルスクラッチでフレームワークを使用せず生PHPでWebサービスを開発しました。
+                        </p>
+                    </div>
+                    <p class="p-work__card__dev">開発期間</p>
+                    <div class="p-work__card__meta">
+                        <p>
+                            2019/7/10 〜 2019/8/10
+                        </p>
+                        <p>
+                            53時間
                         </p>
                     </div>
                     <div class="p-work__card__meta">
@@ -237,7 +311,22 @@
                     <h3 class="p-work__detail__title">架空のカフェサイト</h3>
                     <div class="p-work__card__meta">
                         <p>
-                        架空のカフェサイトです。HTML、CSS、jQueryを1ヶ月ほど学習して、アウトプットとして作成しました。<br>
+                            架空のカフェサイトです。HTML、CSS、jQueryを1ヶ月ほど学習して、アウトプットとして作成しました。
+                        </p>
+                       
+                    </div>
+                    <div class="p-work__card__meta">
+                        <p>
+                            レスポンシブデザインにも挑戦し、コーディングの基礎を学習することができました。
+                        </p>
+                    </div>
+                    <p class="p-work__card__dev">開発期間</p>
+                    <div class="p-work__card__meta">
+                        <p>
+                            2019/６/8 〜 2019/6/10
+                        </p>
+                        <p>
+                            6時間
                         </p>
                     </div>
                     <div class="p-work__card__meta">

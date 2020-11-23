@@ -31,8 +31,16 @@
         padding: 16px;
       }
     }
-    &__meta {
+    &__dev {
       margin-bottom: 8px;
+      display: inline-block;
+      border-bottom: 1px #707070 dashed;
+    }
+    &__meta {
+      margin-bottom: 16px;
+      @include mq() {
+        margin-bottom: 8px;
+      }
       &__list {
         display: flex;
         & > li {
@@ -81,7 +89,8 @@
         z-index: 1;
         transition: all 0.5s ease;
       }
-      @include pchvoer() { // pc以上のディスプレイサイズでホバーアニメーションを実行する
+      @include pchvoer() {
+        // pc以上のディスプレイサイズでホバーアニメーションを実行する
         &:hover::before {
           cursor: pointer;
           opacity: 1;
