@@ -1,0 +1,10 @@
+.p-blog {
+  &__trim {
+    position: relative;
+    overflow: hidden;
+  }
+  &__cardImg {
+    position: absolute;
+    object-fit: cover;
+  }
+}

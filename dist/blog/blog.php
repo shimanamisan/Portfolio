@@ -1,5 +1,5 @@
 <div class="p-skill__wrapp">
-          <div class="p-skill__card u-js-fadeIn">
+          <div class="p-blog__card p-skill__card u-js-fadeIn">
             <figure>
               <img 
               width="486"
@@ -12,7 +12,7 @@
               </p>
             </div>
           </div>
-          <div class="p-skill__card u-js-fadeIn">
+          <div class="p-blog__card p-skill__card u-js-fadeIn">
             <figure>
               <img 
               width="486"
@@ -25,7 +25,7 @@
               </p>
             </div>
           </div>
-          <div class="p-skill__card u-js-fadeIn">
+          <div class="p-blog__card p-skill__card u-js-fadeIn">
             <figure>
               <a href="https://blog.shimanamisan.com/archives/373
               ">

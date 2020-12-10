@@ -127,6 +127,18 @@ if (!empty($_POST)) {
     require 'work_modal.php';
     ?>
 
+      <!-- Blog -->
+      <section class="p-contents p-contents__blog" id="blog">
+        <div class="l-container l-container__skill">
+        <h2 class="p-contents__title">Blog</h2>
+        
+        <!-- blogテンプレートファイル読み込み -->
+        <?php
+          require 'blog/blog.php';
+        ?>
+      </div>
+        </div>
+      </section>
       <!-- Skill -->
       <section class="p-contents p-contents__skill" id="skill">
         <div class="l-container l-container__skill">
