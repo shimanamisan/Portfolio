@@ -17,67 +17,67 @@ getIP();
 $mode = 'contact';
 
 if (isset($_SESSION['mode']) && $_SESSION['mode'] !== $mode) {
-    $_SESSION = []; // セッションをする前に空にする
+  $_SESSION = []; // セッションをする前に空にする
   session_destroy(); // この時点ではセッションは削除されない
   debug(' contact.php' . print_r($_SESSION, true));
-    debug('   ');
+  debug('   ');
 }
 
 // POST送信されていた場合
 if (!empty($_POST)) {
-    debug('POST送信されている処理です。');
+  debug('POST送信されている処理です。');
+  debug('   ');
+
+  // POST時の値をフォームに表示させるので、確認画面から戻ってきた場合に
+  // SESSIONの値を表示させているものをクリアする
+  clearSession('name');
+  clearSession('email');
+  clearSession('subject');
+  clearSession('contact');
+
+  // 変数にフォームの値を格納
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $subject = $_POST['subject'];
+  $contact = $_POST['contact'];
+
+  // 入力必須
+  validRequire($name, 'name');
+  validRequire($email, 'email');
+  validRequire($subject, 'subject');
+  validRequire($contact, 'contact');
+
+  // バリデーションエラーが無い場合
+  if (empty($err_msg)) {
+    debug('未入力バリデーションが通った時の処理です。');
     debug('   ');
 
-    // POST時の値をフォームに表示させるので、確認画面から戻ってきた場合に
-    // SESSIONの値を表示させているものをクリアする
-    clearSession('name');
-    clearSession('email');
-    clearSession('subject');
-    clearSession('contact');
+    // Email形式チェック
+    validEmail($email, 'email');
+    // 名前が全角かチェック
+    validNameText($name, 'name');
 
-    // 変数にフォームの値を格納
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $contact = $_POST['contact'];
+    // 各フォーム文字数チェック
+    validMaxLen($name, 'name', 50);
+    validMaxLen($email, 'email');
+    validMaxLen($subject, 'subject', 50);
+    validContactMaxLen($contact, 'contact');
 
-    // 入力必須
-    validRequire($name, 'name');
-    validRequire($email, 'email');
-    validRequire($subject, 'subject');
-    validRequire($contact, 'contact');
-
-    // バリデーションエラーが無い場合
     if (empty($err_msg)) {
-        debug('未入力バリデーションが通った時の処理です。');
-        debug('   ');
+      debug('バリデーションOKの時の処理です。');
+      debug('   ');
 
-        // Email形式チェック
-        validEmail($email, 'email');
-        // 名前が全角かチェック
-        validNameText($name, 'name');
+      $_SESSION['name'] = $name;
+      $_SESSION['email'] = $email;
+      $_SESSION['subject'] = $subject;
+      $_SESSION['contact'] = $contact;
+      $_SESSION['transition'] = true;
+      $_SESSION['mode'] = $mode;
 
-        // 各フォーム文字数チェック
-        validMaxLen($name, 'name', 50);
-        validMaxLen($email, 'email');
-        validMaxLen($subject, 'subject', 50);
-        validContactMaxLen($contact, 'contact');
-
-        if (empty($err_msg)) {
-            debug('バリデーションOKの時の処理です。');
-            debug('   ');
-
-            $_SESSION['name'] = $name;
-            $_SESSION['email'] = $email;
-            $_SESSION['subject'] = $subject;
-            $_SESSION['contact'] = $contact;
-            $_SESSION['transition'] = true;
-            $_SESSION['mode'] = $mode;
-
-            header("Location:confirm.php");
-            exit();
-        }
+      header("Location:confirm.php");
+      exit();
     }
+  }
 }
 ?>
 
@@ -113,9 +113,8 @@ if (!empty($_POST)) {
           </button> -->
         </div>
 
-        <?php
-        // 切り出しファイルを読み込み
-        require 'profile_modal.php'; ?>
+<?php // 切り出しファイルを読み込み
+require 'profile_modal.php'; ?>
 
       </section>
 
@@ -127,6 +126,16 @@ if (!empty($_POST)) {
     require 'work_modal.php';
     ?>
 
+      <!-- Blog -->
+      <section class="p-contents p-contents__blog" id="blog">
+        <div class="l-container l-container__skill">
+        <h2 class="p-contents__title">Blog</h2>
+        
+        <!-- blogテンプレートファイル読み込み -->
+        <?php require 'blog/blog.php'; ?>
+      </div>
+        </div>
+      </section>
       <!-- Skill -->
       <section class="p-contents p-contents__skill" id="skill">
         <div class="l-container l-container__skill">
@@ -287,17 +296,13 @@ if (!empty($_POST)) {
                   <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
                 </label>
                 <div class="p-contact__form">
-                  <input class="c-form js-form-name <?php if (
-                    !empty($err_msg['name'])
-                  ) {
-        echo 'c-error';
-    } ?>" type="text" name="name"  value="<?php echo getFormData(
-        'name'
-    ); ?>"/>
+                  <input class="c-form js-form-name <?php if (!empty($err_msg['name'])) {
+                    echo 'c-error';
+                  } ?>" type="text" name="name"  value="<?php echo getFormData('name'); ?>"/>
                   <div class="c-error__msg">
                   <?php if (!empty($err_msg['name'])) {
-        echo sanitize('お名前は') . $err_msg['name'];
-    } ?>
+                    echo sanitize('お名前は') . $err_msg['name'];
+                  } ?>
                   </div>
                 </div>
               </div>
@@ -308,14 +313,12 @@ if (!empty($_POST)) {
                 </label>
                 <div class="p-contact__form">
                   <input class="c-form <?php if (!empty($err_msg['email'])) {
-        echo 'c-error';
-    } ?>" type="text" name="email" value="<?php echo getFormData(
-        'email'
-    ); ?>"/>
+                    echo 'c-error';
+                  } ?>" type="text" name="email" value="<?php echo getFormData('email'); ?>"/>
                     <div class="c-error__msg">
                     <?php if (!empty($err_msg['email'])) {
-        echo sanitize('メールアドレスは') . $err_msg['email'];
-    } ?>
+                      echo sanitize('メールアドレスは') . $err_msg['email'];
+                    } ?>
                     </div>
                 </div>
               </div>
@@ -326,14 +329,12 @@ if (!empty($_POST)) {
                 </label>
                 <div class="p-contact__form">
                   <input class="c-form <?php if (!empty($err_msg['subject'])) {
-        echo 'c-error';
-    } ?>" type="text" name="subject" value="<?php echo getFormData(
-        'subject'
-    ); ?>"/>
+                    echo 'c-error';
+                  } ?>" type="text" name="subject" value="<?php echo getFormData('subject'); ?>"/>
                     <div class="c-error__msg">
                     <?php if (!empty($err_msg['subject'])) {
-    echo sanitize('タイトルは') . $err_msg['subject'];
-} ?>
+                      echo sanitize('タイトルは') . $err_msg['subject'];
+                    } ?>
                     </div>
                 </div>
               </div>
@@ -343,17 +344,13 @@ if (!empty($_POST)) {
                   <span class="p-contact__form__icon p-contact__form__icon--require">必須</span>
                 </label>
                 <div class="p-contact__form">
-                  <textarea class="c-form c-form__textarea <?php if (
-                    !empty($err_msg['contact'])
-                  ) {
-    echo 'c-error';
-} ?>" type="text" name="contact"><?php echo getFormData(
-    'contact'
-); ?></textarea>
+                  <textarea class="c-form c-form__textarea <?php if (!empty($err_msg['contact'])) {
+                    echo 'c-error';
+                  } ?>" type="text" name="contact"><?php echo getFormData('contact'); ?></textarea>
                   <div class="c-error__msg">
                     <?php if (!empty($err_msg['contact'])) {
-    echo sanitize('お問い合わせ内容は') . $err_msg['contact'];
-} ?>
+                      echo sanitize('お問い合わせ内容は') . $err_msg['contact'];
+                    } ?>
                     </div>
                 </div>
               </div>

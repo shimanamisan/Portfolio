@@ -7,9 +7,7 @@ particlesJS.load("particles-js", "../particles.json", function () {
   console.log("callback - particles.js config loaded");
 });
 
-
 $(function () {
-  
   // Cookie読み出し用の関数
   function getCookie(key) {
     // Cookieから値を取得する
@@ -17,18 +15,18 @@ $(function () {
     // 要素ごとに ; で区切られているので、 ; で切り出しを行う。新しく配列として生成
     // ここでは前後にスペースが入っている
     let cookieKeyArray = cookieString.split(";");
-  
+
     // 要素分ループを行う
     for (let i = 0; i < cookieKeyArray.length; i++) {
       let targetCookie = cookieKeyArray[i];
-  
+
       // 前後のスペースをカットする
       targetCookie = targetCookie.replace(/^\s+|\s+$/g, "");
-  
+
       // indexOf("=") とすると、= という文字が何番目にあるのか、というのが返ってくる
       let valuIndex = targetCookie.indexOf("=");
       console.log(valuIndex);
-  
+
       if (targetCookie.substring(0, valuIndex) == key) {
         // キーが引数と一致した場合値を返す
         console.log(valuIndex); // 4
@@ -38,11 +36,11 @@ $(function () {
         return decodeURIComponent(targetCookie.slice(valuIndex + 1));
       }
     }
-  
+
     // 一致するものがなければ空文字を返す
     return "";
   }
-  
+
   console.log("getCookie関数：" + getCookie("name"));
   let $menu = $(".js-menu");
   let $nav_bg = $(".js-nav-background");
@@ -63,22 +61,21 @@ $(function () {
 *****************************************/
   let $jsLoading = $(".js-loading");
   // ローディングアイコンの表示の制御にcookieを使用
-  if(getCookie("name") === ""){
+  if (getCookie("name") === "") {
     // スタイリングで opacity: 0; にしているのでローディングアイコンを表示させる
-    $jsLoading.css("opacity","1")
-    $(window).on("load", function(){
-      console.log("load!!")
-      $jsLoading.fadeOut('slow');
-    })
+    $jsLoading.css("opacity", "1");
+    $(window).on("load", function () {
+      console.log("load!!");
+      $jsLoading.fadeOut("slow");
+    });
 
     // Cookieに初回アクセス時か判定する値を記述する
     // 2回目以降のアクセスの際は、この値がcookieにセットされているのでローディングアイコンは非表示になる
     document.cookie = "name=" + encodeURIComponent("first_access");
-    
   } else {
     // 2回目以降のアクセスではローディングアイコンは表示させない
     $jsLoading.css("display", "none");
-    console.log("2回目以降のアクセスです")
+    console.log("2回目以降のアクセスです");
   }
 
   /****************************************
@@ -98,7 +95,7 @@ $(function () {
     console.log("position変数の中 " + position);
     $("body,html").animate(
       {
-        scrollTop: position,
+        scrollTop: position
       },
       0
     );
@@ -111,7 +108,10 @@ $(function () {
   var $ftr = $("#footer");
   if (window.innerHeight > $ftr.offset().top + $ftr.outerHeight()) {
     $ftr.attr({
-      style: "position:fixed; top:" + (window.innerHeight - $ftr.outerHeight()) + "px; width: 100%;",
+      style:
+        "position:fixed; top:" +
+        (window.innerHeight - $ftr.outerHeight()) +
+        "px; width: 100%;"
     });
   }
 
@@ -134,17 +134,6 @@ $(function () {
       }
     });
   });
-  //  $(window).scroll(function(){
-  //   $('.js-fadeIn').each(function(){
-  //     var elemPos = $(this).offset().top,
-  //         scroll = $(window).scrollTop(),
-  //         windowHeight = $(window).height();
-  //     if(scroll > elemPos -windowHeight + 200){
-  //       $(this).addClass('fadeIn');
-  //     }
-  //   });
-
-  // });
 
   /****************************************
 プロフィール詳細用モーダルの表示
@@ -203,7 +192,7 @@ $(function () {
         $(this).text("入力必須です。");
       }
     },
-    focus: function () {},
+    focus: function () {}
   });
 
   /****************************************
@@ -217,7 +206,7 @@ $(function () {
     contact_position = contact.get(0).offsetTop;
     $("body,html").animate(
       {
-        scrollTop: contact_position,
+        scrollTop: contact_position
       },
       0
     );
