@@ -4,7 +4,7 @@ src/.DS_Store
 package-lock.json
 .vscode/
 debug.log
-/dist/css
-/dist/js
+!/dist/css
+!/dist/js
 /dist/movie
 .DS_Store
