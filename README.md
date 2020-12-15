@@ -1,6 +1,4 @@
-# portfolio
-
-## ポートフォリオのリポジトリです
+# Portfolio
 
 ![MyPortfolio](https://user-images.githubusercontent.com/49751604/102266271-8de37500-3f5b-11eb-96fa-8555e7468b74.png)
 
