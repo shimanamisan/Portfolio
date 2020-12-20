@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="プログラミング初学者のポートフォリオサイトです。">
+    <meta name="keywords" content="ポートフォリオ,プログラミング学習,プログラミング">
     <link rel="stylesheet" href="css/style.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,700|Nunito:400,700&display=swap" />
     <link rel="icon" href="./img/site-icon.ico" sizes="32x32">

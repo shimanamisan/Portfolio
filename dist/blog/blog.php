@@ -4,7 +4,7 @@
             " target="_brank" rel=”noreferrer”>
             <figure class="p-blog__imgWrapp">
               <img 
-              src="https://blog.shimanamisan.com/wp-content/uploads/2020/03/Vagrant_Laravel.png" alt="">
+              src="https://blog.shimanamisan.com/wp-content/uploads/2020/03/Vagrant_Laravel.png" alt="Vagrantで開発環境を構築">
             </figure>
             <div class="p-blog__detail__text">
               <p>
@@ -18,7 +18,7 @@
             " target="_brank" rel=”noreferrer”>
             <figure class="p-blog__imgWrapp">
               <img 
-              src="https://blog.shimanamisan.com/wp-content/uploads/2020/11/TaskApp.png" alt="">
+              src="https://blog.shimanamisan.com/wp-content/uploads/2020/11/TaskApp.png" alt="タスク管理アプリを作成した話">
             </figure>
             <div>
               <p class="p-blog__detail__text">
@@ -32,7 +32,7 @@
           " target="_brank" rel=”noreferrer” >
           <figure class="p-blog__imgWrapp">
             <img 
-            src="https://blog.shimanamisan.com/wp-content/uploads/2020/10/todo_list.png" alt="">
+            src="https://blog.shimanamisan.com/wp-content/uploads/2020/10/todo_list.png" alt="Vue.jsでTODOリストを作成">
           </figure>
           <div>
             <p class="p-blog__detail__text">
