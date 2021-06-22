@@ -8,10 +8,3 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
-
-<IfModule "%{HTTP_HOST} == 'my-portfolio.shimanamisan.com/'">
-# 本番環境のホストならHTTPSへリダイレクトさせる
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-</IfModule>

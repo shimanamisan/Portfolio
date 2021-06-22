@@ -144,7 +144,5 @@ debug('   ');
 
 <?php
 // footer.php 読み込み
-// footer.php 読み込み
-?>require 'footer.php';
-
+require 'footer.php';
 ?>

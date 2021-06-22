@@ -4,21 +4,21 @@
             " target="_brank" rel=”noreferrer”>
             <figure class="p-blog__imgWrapp">
               <img 
-              src="https://blog.shimanamisan.com/wp-content/uploads/2020/03/Vagrant_Laravel.png" alt="Vagrantで開発環境を構築">
+              src="https://hn-pgtech.com/wp-content/uploads/2021/04/e6286d95ffe2b925bd1dd19ecb7b2dc3.png" alt="シェルスクリプトを使用して自動で環境構築を行う">
             </figure>
             <div class="p-blog__detail__text">
               <p>
-              Vagrant + CentOS8 + Laravel で開発環境を構築
+              【Vagrant +CentOS】シェルスクリプトを使用して自動で環境構築を行う
               </p>
             </div>
             </a>
           </div>
           <div class="p-blog__card p-skill__card u-js-fadeIn">
-            <a href="https://blog.shimanamisan.com/archives/373
+            <a href="https://hn-pgtech.com/archives/373
             " target="_brank" rel=”noreferrer”>
             <figure class="p-blog__imgWrapp">
               <img 
-              src="https://blog.shimanamisan.com/wp-content/uploads/2020/11/TaskApp.png" alt="タスク管理アプリを作成した話">
+              src="https://hn-pgtech.com/wp-content/uploads/2020/11/TaskApp.png" alt="タスク管理アプリを作成した話">
             </figure>
             <div>
               <p class="p-blog__detail__text">
@@ -32,7 +32,7 @@
           " target="_brank" rel=”noreferrer” >
           <figure class="p-blog__imgWrapp">
             <img 
-            src="https://blog.shimanamisan.com/wp-content/uploads/2020/10/todo_list.png" alt="Vue.jsでTODOリストを作成">
+            src="https://hn-pgtech.com/wp-content/uploads/2020/10/todo_list.png" alt="Vue.jsでTODOリストを作成">
           </figure>
           <div>
             <p class="p-blog__detail__text">
