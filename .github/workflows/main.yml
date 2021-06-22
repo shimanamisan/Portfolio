@@ -1,4 +1,4 @@
-name: lolipop
+name: deploy to web-portfolio.tech
 
 on:
   push:
@@ -9,13 +9,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@3.0.0
-        with:
-          ftp-server: ${{ secrets.FTP_HOST }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          git-ftp-args: --remote-root ${{ secrets.FTP_REMOTE_ROOT }}
-          local-dir: dist
+      - uses: actions/checkout@v1
+      - name: gulp build
+        uses: actions/setup-node@v1
+      - run: yarn install && yarn build
+      - name: ssh key generate
+        run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: rsync deploy
+        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022" --delete ./dist/* sv12269.xserver.jp:/home/xs010410/web-portfolio.tech/public_html --exclude .htaccess
