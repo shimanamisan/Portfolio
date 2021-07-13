@@ -1,5 +1,5 @@
 <!-- Work -->
-<section class="p-contents p-contents__work" id="work">
+<section class="p-contents c-backcolor" id="work">
     <div class="l-container l-container__work">
         <h2 class="p-contents__title u-js-fadeIn">Work</h2>
         <!-- work wrapp -->

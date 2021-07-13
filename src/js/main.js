@@ -108,10 +108,7 @@ $(function () {
   var $ftr = $("#footer");
   if (window.innerHeight > $ftr.offset().top + $ftr.outerHeight()) {
     $ftr.attr({
-      style:
-        "position:fixed; top:" +
-        (window.innerHeight - $ftr.outerHeight()) +
-        "px; width: 100%;"
+      style: "position:fixed; top:" + (window.innerHeight - $ftr.outerHeight()) + "px; width: 100%;"
     });
   }
 
@@ -219,7 +216,7 @@ $(function () {
   let element = document.querySelectorAll("#js-top-redirect");
   // console.log(element.length);
   if (element.length !== 0) {
-    setTimeout(function () {
+    setTimeout(() => {
       window.location.href = "/";
     }, 3000);
   }

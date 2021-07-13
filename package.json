@@ -17,7 +17,6 @@
     "babelify": "^10.0.0",
     "browser-sync": "^2.26.7",
     "browserify": "^16.5.2",
-    "connect-ssi": "^1.1.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-changed": "^4.0.2",

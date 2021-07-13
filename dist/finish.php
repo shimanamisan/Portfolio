@@ -116,7 +116,7 @@ debug('   ');
 
 
 <div class="l-main">
-<section class="">
+    <section class="">
         <div class="l-container l-container__contact">
             <h2 class="p-contents__title p-finish__title">Complete</h2>
             <div class="p-contact p-contact__group__wrapp">
@@ -127,7 +127,7 @@ debug('   ');
                     恐れ入りますがしばらくお待ちください。
                 </p>
                 <p class="p-finish__text">
-                自動にトップページへ戻らない場合は、トップページへ戻るボタンをクリックしてください。
+                    自動にトップページへ戻らない場合は、トップページへ戻るボタンをクリックしてください。
                 </p>
             </div>
             <form action="">
@@ -138,8 +138,8 @@ debug('   ');
                 </div>
             </form>
         </div>
-      </section>
-      <!-- end Contact -->
+    </section>
+    <!-- end Contact -->
 </div>
 
 <?php

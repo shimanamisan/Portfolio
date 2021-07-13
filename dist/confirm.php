@@ -89,86 +89,85 @@ if (isset($_SESSION)) {
 
 
 <div class="l-main">
-<section class="p-contents p-contents__contact" id="contact">
+    <section class="p-contents p-contents__contact" id="contact">
         <div class="l-container l-container__contact">
-          <h2 class="p-contents__title">Confirm</h2>
-          <div class="p-contact p-contact__group__wrapp">
-            <form method="post" action="./finish.php">
-            <input type="hidden" name="csrf_token" value="<?php echo sanitize(
+            <h2 class="p-contents__title">Confirm</h2>
+            <div class="p-contact p-contact__group__wrapp">
+                <form method="post" action="./finish.php">
+                    <input type="hidden" name="csrf_token" value="<?php echo sanitize(
               $_SESSION['csrf_token']
             ); ?>">
-              <div class="p-contact__form__wrapp">
-                <label class="p-contact__form__title" for="">
-                  <span class="p-contact__form__text">お名前</span>
-                  
-                </label>
-                <div class="p-contact__form">
-                  <div class="p-confirm">
-                    <p class="p-confirm__text"><?php echo getFormData(
+                    <div class="p-contact__form__wrapp">
+                        <label class="p-contact__form__title" for="">
+                            <span class="p-contact__form__text">お名前</span>
+
+                        </label>
+                        <div class="p-contact__form">
+                            <div class="p-confirm">
+                                <p class="p-confirm__text"><?php echo getFormData(
                       'name'
                     ); ?></p>
-                  </div>
-                </div>
-              </div>
-              <div class="p-contact__form__wrapp">
-                <label class="p-contact__form__title" for="">
-                  <span class="p-contact__form__text">メールアドレス</span>
-               
-                </label>
-                <div class="p-contact__form">
-                  <div class="p-confirm">
-                      <p class="p-confirm__text"><?php echo getFormData(
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-contact__form__wrapp">
+                        <label class="p-contact__form__title" for="">
+                            <span class="p-contact__form__text">メールアドレス</span>
+
+                        </label>
+                        <div class="p-contact__form">
+                            <div class="p-confirm">
+                                <p class="p-confirm__text"><?php echo getFormData(
                         'email'
                       ); ?></p>
-                  </div>
-                </div>
-              </div>
-              <div class="p-contact__form__wrapp">
-                <label class="p-contact__form__title" for="">
-                  <span class="p-contact__form__text">タイトル</span>
-              
-                </label>
-                <div class="p-contact__form">
-                  <div class="p-confirm">
-                    <p class="p-confirm__text"><?php echo getFormData(
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-contact__form__wrapp">
+                        <label class="p-contact__form__title" for="">
+                            <span class="p-contact__form__text">タイトル</span>
+
+                        </label>
+                        <div class="p-contact__form">
+                            <div class="p-confirm">
+                                <p class="p-confirm__text"><?php echo getFormData(
                       'subject'
                     ); ?></p>
-                  </div>
-                </div>
-              </div>
-              <div class="p-contact__form__wrapp">
-                <label class="p-contact__form__title" for="">
-                  <span class="p-contact__form__text">お問い合わせ内容</span>
-                  
-                </label>
-                <div class="p-contact__form">
-                  <div class="p-confirm p-confirm__textarea">
-                      <p class="p-confirm__text"><?php echo getFormData(
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-contact__form__wrapp">
+                        <label class="p-contact__form__title" for="">
+                            <span class="p-contact__form__text">お問い合わせ内容</span>
+
+                        </label>
+                        <div class="p-contact__form">
+                            <div class="p-confirm p-confirm__textarea">
+                                <p class="p-confirm__text"><?php echo getFormData(
                         'contact'
                       ); ?></p>
-                  </div>
-                </div>
-              </div>
-                <div class="c-btn__wrapp">
-                  <button class="c-btn p-confirm__btn" type="submit" name="send" value="send">
-                    <span class="c-btn__text">送信する</span>
-                  </button>
-                  </form>
-                  <form method="post" action="">
-                      <button class="c-btn c-btn__back" type="submit" name="back" value="back">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-btn__wrapp">
+                        <button class="c-btn p-confirm__btn" type="submit" name="send" value="send">
+                            <span class="c-btn__text">送信する</span>
+                        </button>
+                </form>
+                <form method="post" action="">
+                    <button class="c-btn c-btn__back" type="submit" name="back" value="back">
                         <span class="c-btn__text">戻る</span>
-                      </button>
-                  </form>
-                </div>
-          </div>
+                    </button>
+                </form>
+            </div>
         </div>
-      </section>
-      <!-- end Contact -->
+</div>
+</section>
+<!-- end Contact -->
 </div>
 
 <?php
 // footer.php 読み込み
-// footer.php 読み込み
-?>require 'footer.php';
+require 'footer.php';
 
 ?>
