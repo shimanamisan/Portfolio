@@ -6,6 +6,80 @@
         <ul class="p-work__wrapp">
             <li class="p-work__card u-js-fadeIn">
                 <div class="p-work__card__inner">
+                <div class="p-work__img__wrapp ">
+                    <img class="p-work__img" src="https://placehold.jp/300x250.png?text=No image" alt="" />
+                </div>
+                <div class="p-work__card__detail">
+                <h3 class="p-work__detail__title">Apacheログ解析ソフト</h3>
+                <div class="p-work__card__meta">
+                    <p>
+                        Googleアナリティクスが設置できない環境でのPV数を解析するために作成したツールです。<br>
+                    </p>
+                </div>
+                <div class="p-work__card__meta">
+                    <p>
+                        <br><br>
+                    </p>
+                </div>
+                <p class="p-work__card__dev">開発期間</p>
+                    <div class="p-work__card__meta">
+                        <p>
+                            2021/3/15 〜 2021/4/16
+                        </p>
+                        <p>
+                            <!-- 30時間 -->
+                        </p>
+                    </div>
+                    <div class="p-work__card__meta">
+                        <ul class="p-work__card__meta__list">
+                            <li><i class="fas fa-laptop-code"></i></li>
+                            <li>C#</li>
+                            <li>WPF</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </li>
+            <li class="p-work__card u-js-fadeIn">
+                <div class="p-work__card__inner">
+                <div class="p-work__img__wrapp">
+                    <img class="p-work__img" src="https://placehold.jp/300x250.png?text=No image" alt="" />
+                </div>
+                <div class="p-work__card__detail">
+                <h3 class="p-work__detail__title">画像自動生成システム</h3>
+                <div class="p-work__card__meta">
+                    <p>
+                        映像配信に使用する画像を自動で生成し、インターネット上から操作できるようにWebシステム化した社内ツールです。<br>
+                    </p>
+                </div>
+                <div class="p-work__card__meta">
+                    <p>
+                       システム構成や実行環境に制約がある中、どうやったら実現できるか考慮し実装しました。
+                       また、初めてスクレイピングという技術に触れ、開発期間が限られている中いち早くキャッチアップ出来るようにスピードも意識しました。
+                    </p>
+                </div>
+                <p class="p-work__card__dev">開発期間</p>
+                    <div class="p-work__card__meta">
+                        <p>
+                            2021/2/26 〜 2021/3/12
+                        </p>
+                        <p>
+                            <!-- 30時間 -->
+                        </p>
+                    </div>
+                    <div class="p-work__card__meta">
+                        <ul class="p-work__card__meta__list">
+                            <li><i class="fas fa-laptop-code"></i></li>
+                            <li>PHP</li>
+                            <li>jQuery</li>
+                            <li>C#</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </li>
+            <li class="p-work__card u-js-fadeIn">
+                <div class="p-work__card__inner">
                 <div class="p-work__img__wrapp js-modal__open" data-modal-link="js-portfolio">
                     <img class="p-work__img" src="./img/MyPortfolio.png" alt="ポートフォリオサイト" />
                 </div>

@@ -47,8 +47,8 @@
                             </div>
                             <div class="c-modal__site__info">
                                 <span>URL：</span>
-                                <p><a href="https://crypto-trend2020.shimanamisan.com" target="_brank"
-                                        rel=”noreferrer”>https://crypto-trend2020.shimanamisan.com</a></p>
+                                <p><a href="https://cryptotrend.work/" target="_brank"
+                                        rel=”noreferrer”>https://cryptotrend.work/</a></p>
                             </div>
                             <div class="c-modal__site__info">
                                 <span>GitHub：</span>

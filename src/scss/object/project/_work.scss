@@ -1,18 +1,23 @@
 .p-work {
   &__wrapp {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-flex-start;
     flex-wrap: wrap;
     @include mq() {
       flex-direction: column;
     }
   }
   &__card {
+    margin-right: 24px;
+    // width: calc(100% / 3);
     width: calc((100% - 60px) / 3);
     min-height: 400px;
     background-color: #fff;
     margin-bottom: 56px;
 
+    &:nth-of-type(3n){
+      margin-right: -24px;
+    }
     @include custumRadius(5px);
     @include custumShadow(0, 3px, 15px, 0, rgba(88, 88, 88, 0.3));
     &__inner {
