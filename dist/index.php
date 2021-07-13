@@ -102,10 +102,15 @@ if (!empty($_POST)) {
                 <p class="p-about__name">Hisafumi Nishihara</p>
                 <p class="p-about__text">1987年9月10日生まれ、愛媛県出身、兵庫県在住。</p>
                 <p class="p-about__text">
-                    現職でVBAを使用した業務改善ツールや、ホームページ制作依頼を受けたことをきっかけにプログラミングに興味を持ちました。
+                    現職でVBAを使用した業務改善ツールや、ホームページ制作依頼を受けたことをきっかけにプログラミングに興味を持ち、
+                    HTML、CSS、JavaScript、PHP言語を学び、その他開発ツールやフレームワークを用いてWebサービスの開発を行いました。
                 </p>
                 <p class="p-about__text">
-                    独学、オンラインプログラミングスクールにて、HTML、CSS、JavaScript、PHP言語を学び、その他開発ツールやフレームワークを用いてWebサービスの開発を行いました。現在も継続的に学習しています。
+                    現在は広告代理店のシステム開発部に勤務しており、主にPHPを使用したWebシステムの開発や、
+                    C#を使用した映像配信システムや社内ツールの開発をしています。
+                </p>
+                <p class="p-about__text">
+                    その他の業務として、PCのキッティングやサーバの設置、ネットワーク関連の障害対応も行っています。
                 </p>
             </div>
             <!-- <button class="c-btn js-modal-open">
@@ -114,7 +119,8 @@ if (!empty($_POST)) {
         </div>
 
         <?php // 切り出しファイルを読み込み
-require 'profile_modal.php'; ?>
+        require 'profile_modal.php';
+        ?>
 
     </section>
 
