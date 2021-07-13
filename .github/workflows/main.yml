@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: gulp build
-        uses: actions/setup-node@v1
-      - run: yarn install && gulp build
       - name: ssh key generate
         run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: rsync deploy
-        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022" --delete ./dist/* xs010410@sv12269.xserver.jp:/home/xs010410/web-portfolio.tech/public_html --exclude .htaccess
+        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022" --delete ./* xs010410@sv12269.xserver.jp:/home/xs010410/web-portfolio.tech/public_html --exclude .htaccess --exclude node_modules
+      - name: gulp build
+        uses: actions/setup-node@v1
+      - run: yarn install && gulp build
