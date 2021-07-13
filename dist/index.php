@@ -102,7 +102,7 @@ if (!empty($_POST)) {
                 <p class="p-about__name">Hisafumi Nishihara</p>
                 <p class="p-about__text">1987年9月10日生まれ、愛媛県出身、兵庫県在住。</p>
                 <p class="p-about__text">
-                    現職でVBAを使用した業務改善ツールや、ホームページ制作依頼を受けたことをきっかけにプログラミングに興味を持ち、
+                    前職でVBAを使用した業務改善ツールや、ホームページ制作依頼を受けたことをきっかけにプログラミングに興味を持ち、
                     HTML、CSS、JavaScript、PHP言語を学び、その他開発ツールやフレームワークを用いてWebサービスの開発を行いました。
                 </p>
                 <p class="p-about__text">
