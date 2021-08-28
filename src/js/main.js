@@ -1,13 +1,16 @@
 // ライブラリを読み込み
-import $ from "jquery";
+import jQuery from "jquery";
 import "particles.js/particles";
+import Swiper from "swiper";
+// import 'swiper/swiper-bundle.css';
+
 const particlesJS = window.particlesJS;
 
 particlesJS.load("particles-js", "../particles.json", function () {
   console.log("callback - particles.js config loaded");
 });
 
-$(function () {
+jQuery(function ($) {
   // Cookie読み出し用の関数
   function getCookie(key) {
     // Cookieから値を取得する
@@ -25,14 +28,14 @@ $(function () {
 
       // indexOf("=") とすると、= という文字が何番目にあるのか、というのが返ってくる
       let valuIndex = targetCookie.indexOf("=");
-      console.log(valuIndex);
+      // console.log(valuIndex);
 
       if (targetCookie.substring(0, valuIndex) == key) {
         // キーが引数と一致した場合値を返す
-        console.log(valuIndex); // 4
-        console.log(targetCookie.substring(0, valuIndex)); // name
-        console.log(typeof targetCookie);
-        console.log("targetCookieのif文でtrueの判定です " + targetCookie);
+        // console.log(valuIndex); // 4
+        // console.log(targetCookie.substring(0, valuIndex)); // name
+        // console.log(typeof targetCookie);
+        // console.log("targetCookieのif文でtrueの判定です " + targetCookie);
         return decodeURIComponent(targetCookie.slice(valuIndex + 1));
       }
     }
@@ -65,7 +68,7 @@ $(function () {
     // スタイリングで opacity: 0; にしているのでローディングアイコンを表示させる
     $jsLoading.css("opacity", "1");
     $(window).on("load", function () {
-      console.log("load!!");
+      // sconsole.log("load!!");
       $jsLoading.fadeOut("slow");
     });
 
@@ -90,9 +93,9 @@ $(function () {
     let href = $(this).attr("href"),
       target = $(href == "#" || href == "" ? "html" : href),
       position = target.offset().top;
-    console.log("href変数の中 " + href);
-    console.log("target変数の中 " + JSON.stringify(target));
-    console.log("position変数の中 " + position);
+    // console.log("href変数の中 " + href);
+    // console.log("target変数の中 " + JSON.stringify(target));
+    // console.log("position変数の中 " + position);
     $("body,html").animate(
       {
         scrollTop: position
@@ -116,7 +119,7 @@ $(function () {
  スクロールアニメーション
 *****************************************/
   $(window).on("scroll", function () {
-    console.log("scroll!!");
+    // console.log("scroll!!");
     $(".u-js-fadeIn").each(function () {
       let position = $(this).offset().top, // 指定した要素のY座標を取得
         scroll = $(window).scrollTop(), // スクロール位置を取得
@@ -124,9 +127,9 @@ $(function () {
 
       // 要素が画面中央に来た時に発火
       if (scroll > position - windowHeight + 200) {
-        console.log("scroll :" + scroll);
-        console.log("position :" + position);
-        console.log("windowHeight :" + windowHeight);
+        // console.log("scroll :" + scroll);
+        // console.log("position :" + position);
+        // console.log("windowHeight :" + windowHeight);
         $(this).addClass("u-js-fadeIn--active");
       }
     });
@@ -158,9 +161,9 @@ $(function () {
 
   $workModalOpen.on("click", function () {
     let target = $(this).data("modal-link");
-    console.log("クリックした要素 " + target);
+    // console.log("クリックした要素 " + target);
     let showModal = document.querySelector("." + target);
-    console.log(showModal);
+    // console.log(showModal);
     $(showModal).toggleClass("c-modal--active");
     $body.css({ overflow: "hidden" });
   });
@@ -220,4 +223,14 @@ $(function () {
       window.location.href = "/";
     }, 3000);
   }
+
+  /***********************************************
+ブログの画像スライダー
+*************************************************/
+  const option = {
+    loop: true,
+    autoplay: true
+  };
+
+  const swiper = new Swiper(".js-slider", option);
 });

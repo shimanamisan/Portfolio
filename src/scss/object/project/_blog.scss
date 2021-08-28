@@ -52,6 +52,20 @@
     & > a {
       color: $font-color_default;
     }
+
+    &__wrapp {
+      max-width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 50px;
+    }
+
+    &__meta {
+      margin-bottom: 16px;
+       & > p {
+         text-align: left;
+       }
+    }
   }
   &__cardImg {
     position: absolute;

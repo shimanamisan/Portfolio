@@ -52,7 +52,7 @@
       @include mq() {
         // スマホ画面でも scale(100) にしていたらメニューを閉じた時に一瞬背景が消えるので
         // 拡大の倍率をスマホ用に変更
-        transform: scale(30);
+        transform: scale(80);
       }
     }
   }

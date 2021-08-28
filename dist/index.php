@@ -137,6 +137,17 @@ if (!empty($_POST)) {
         <div class="l-container l-container__skill">
             <h2 class="p-contents__title">Blog</h2>
 
+            <div class="p-blog__card__wrapp">
+                <div class="p-blog__card__meta">
+                    <p>学習したことやエラーの解決方法などのアウトプットとして定期的にブログを記述しています。</p>
+                </div>
+                <div class="p-blog__card__meta">
+                    <p>
+                        ブログでアウトプットすることで知識の定着や情報を整理する訓練を目的としています。
+                        また、私が初学者のときに様々な方の技術ブログに助けられたように、どなたかの解決の手伝いになれば良いと言う思いも込めて記述しています。
+                    </p>
+                </div>
+            </div>
             <!-- blogテンプレートファイル読み込み -->
             <?php require 'blog/blog.php'; ?>
         </div>
